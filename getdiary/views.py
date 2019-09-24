@@ -3,5 +3,5 @@ from django.shortcuts import render
 
 
 def home_view(request):
-    context = {'name': 'Artem'}
+    context = {'name': 'Провком'}
     return render(request, 'base.html', context)
