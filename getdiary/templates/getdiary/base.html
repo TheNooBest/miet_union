@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700" rel="stylesheet">
+  <!-- Stylesheets -->
+  {% block styles %}
+  <link href="{% static 'plugin-frameworks/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'common/styles.css' %}" rel="stylesheet">
+  <link href="{% static 'fonts/ionicons.css' %}" rel="stylesheet">
+  {% endblock %}
+  <title>{% block title%}Ednews{% endblock%}</title>
+</head>
+<body>
+  <header>
+    <div class="bottom-menu">
+      <div class="container">
+        <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
+         <ul class="main-menu" id="main-menu">
+					<li class="drop-down"><a href="#!">Главная<i class=""></i></a>
+					</li>
+					<li class="drop-down"><a href="#!">Студенту<i class="ion-chevron-down"></i></a>
+						<ul class="drop-down-menu drop-down-inner">
+							<li><a href="#">PAGE 1</a></li>
+							<li><a href="#">PAGE 2</a></li>
+						</ul>
+					</li>
+					<li class="drop-down"><a href="#!">Документы<i class="ion-chevron-down"></i></a>
+						<ul class="drop-down-menu drop-down-inner">
+							<li><a href="#">PAGE 1</a></li>
+							<li><a href="#">PAGE 2</a></li>
+						</ul>
+					</li>
+					<li class="drop-down"><a href="#!">О нас<i class="ion-chevron-down"></i></a>
+						<ul class="drop-down-menu drop-down-inner">
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">------------</a></li>
+              <li><a href="#">------------</a></li>
+              <li><a href="#">------------</a></li>
+						</ul>
+					</li>
+        <div class="clearfix"></div>
+      </div><!-- container -->
+    </div><!-- bottom-menu -->
+  </header>
+  {% block content%}
+  {% endblock%}
+  <footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
+    <div class="container">
+      <div class="text-center ptb-30">
+        <div class="row">
+          <div class="col-sm-3">
+            {% comment %} Лого профкома {% endcomment %}
+          </div><!-- col-sm-3 -->
+          <div class="col-sm-5">
+            <p class="mtb-10">Подписывайтесь на наши старницы в социальных сетях.</p>
+          </div><!-- col-sm-3 -->
+          <div class="col-sm-4">
+            <ul class="mtb-10 font-12 list-radial-35 list-li-mlr-3">
+              <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+              <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+              <li><a href="#"><i class="ion-social-google"></i></a></li>
+              <li><a href="#"><i class="ion-social-rss"></i></a></li>
+            </ul>
+          </div><!-- col-sm-3 -->
+        </div><!-- row -->
+      </div><!-- text-center -->
+    </div><!-- container -->
+    <div class="bg-dark-primary ptb-15 text-left">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <p class="text-md-center font-9 pt-5 mtb-5">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div><!-- col-sm-3 -->
+          <div class="col-sm-12 col-md-6">
+            <ul class="mtb-5 font-11 text-md-center text-right list-a-p-5">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Sport</a></li>
+              <li><a href="#">Politics</a></li>
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Culture</a></li>
+              <li><a href="#">Tech</a></li>
+              <li><a href="#">Video</a></li>
+            </ul>
+          </div><!-- col-sm-3 -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- container -->
+  </footer>
+  <!-- SCIPTS -->
+  <script src="{% static 'plugin-frameworks/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'plugin-frameworks/tether.min.js' %}"></script>
+  <script src="{% static 'plugin-frameworks/bootstrap.js' %}"></script>
+  <script src="{% static 'common/scripts.js' %}"></script>
+</body>
+
+</html>
