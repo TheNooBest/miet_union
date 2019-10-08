@@ -170,7 +170,7 @@ header .menu-nav-icon{ display: inline-block; font-size: 30px; line-height: 50px
 
 header .main-menu li.drop-down{ position: relative; text-align: left; }
 
-header .main-menu li.drop-down > ul.drop-down-menu{ font-size: 1.1em; display: none; position: absolute; top: 60px; 
+header .main-menu li.drop-down > ul.drop-down-menu{ font-size: 0.9em; display: none; position: absolute; top: 60px; 
 	left: 0; right: 0; min-width: 180px; box-shadow: 0px 3px 10px rgba(0,0,0,.3); background: #0f45c7; z-index: 10;  }
 
 header .main-menu li.drop-down > ul.drop-down-menu li{ display: block; border-top: 1px solid #0f45c7; 
