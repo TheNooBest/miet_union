@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    context = {'name': '228_Potato_Freeman_228'}
+    context = {'name': 'union_test'}
     return render(request, 'getdiary/home.html', context)
 
 
