@@ -1,7 +1,15 @@
 {% extends "getdiary/base.html" %} 
+{% load django_bootstrap_breadcrumbs %}
 {% block title %} Домашнаяя страница {% endblock %} 
-{% block content %}
+<!-- START OF BREACRUMBS --> 
+{% block breadcrumbs %}
+<div class="container">
+{% breadcrumb 'Главная' 'home' %}
+{% render_breadcrumbs %}
+</div>
+{% endblock %}
 <!-- START OF MAIN SLIDER -->
+{% block content %}
   <section class="">
     <div class="container">
       <div class="row">

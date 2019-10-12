@@ -1,5 +1,14 @@
-{% extends "getdiary/base.html" %} 
-{% block title %} Тестовая страница {% endblock %} 
+{% extends "getdiary/base.html" %}
+{% load django_bootstrap_breadcrumbs %}
+{% block title %} Тестовая страница {% endblock %}
+<!-- START OF BREACRUMBS -->
+{% block breadcrumbs %}
+  <div class="container">
+    {% breadcrumb 'Главная' 'home' %}
+    {% breadcrumb 'Тестовая страница' 'test' %}
+    {% render_breadcrumbs %}
+  </div>
+    {% endblock %}
 {% block content %}
 <h3 class="mt-30"><a href="#">WPP is investigating an allegation of personal misconduct against
                 its chief executive Sir Martin Sorrell.</a></h3>
