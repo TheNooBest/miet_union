@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 {% load static %}
+{% load getdiary_extras %}
 {% load django_bootstrap_breadcrumbs %}
 <html lang="en">
 
@@ -51,8 +52,13 @@
       </div><!-- container -->
     </div><!-- bottom-menu -->
   </header>
-  {% block breadcrumbs %}
-  {% endblock %}
+    <div class="container">
+      {% breadcrumb 'home' 'home' %}
+      {% for path in request|get_path_names %}
+      {% breadcrumb path path %}
+      {% endfor %}
+      {% render_breadcrumbs %}
+    </div>
   {% block content%}
   {% endblock%}
   <footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
