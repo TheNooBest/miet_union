@@ -1,0 +1,26 @@
+{% extends "miet_union/base.html" %}
+{% load static %}
+{% load django_bootstrap_breadcrumbs %}
+{% block title %} Наша команда {% endblock %}
+<!-- START OF BREACRUMBS -->
+{% block content %}
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
+          <h4 class="p-title"><b>TODAY FEATURED</b></h4>
+          <img src="{% static 'images/news-1-700x400.jpg' %}" alt="">
+          <h3 class="mt-30"><a href="#">Марья Ивановна</a></h3>
+          <ul class="mtb-10 list-li-mr-20 color-lite-black">
+            <li><i class="mr-5 font-12 ion-clock"></i>Jan 25, 2018</li>
+            <li><i class="mr-5 font-12 ion-android-person"></i>John Dowson</li>
+            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>15</li>
+            <li><i class="mr-5 font-12 ion-eye"></i>105</li>
+          </ul>
+          <p>Работает у наш уже 15 минут, 11 секунд. Наш лучший сотрудник</p>
+        </div><!-- bg-white -->
+    </div><!-- row -->
+  </div><!-- container -->
+</section>
+{% endblock %}
