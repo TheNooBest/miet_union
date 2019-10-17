@@ -1,4 +1,5 @@
-{% extends "miet_union/base.html" %} 
+{% extends "miet_union/base.html" %}
+{% load static %} 
 {% load django_bootstrap_breadcrumbs %}
 {% block title %} Домашнаяя страница {% endblock %} 
 <!-- START OF BREACRUMBS --> 
@@ -16,7 +17,7 @@
         <div class="col-md-12 col-lg-8">
           <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
             <h4 class="p-title"><b>TODAY FEATURED</b></h4>
-            <img src="images/news-1-700x400.jpg" alt="">
+            <img src="{% static 'images/news-1-700x400.jpg' %}" alt="">
             <h3 class="mt-30"><a href="#">WPP is investigating an allegation of personal misconduct against
                 its chief executive Sir Martin Sorrell.</a></h3>
             <ul class="mtb-10 list-li-mr-20 color-lite-black">
@@ -31,7 +32,7 @@
           </div><!-- bg-white -->
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-2-250x250.jpg" alt="">
+              <img src="{% static 'images/news-2-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 p-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">Bahrain Grand Prix: Will Sebastian Vettel reign in the heat of the desert?</a></h4>
@@ -45,7 +46,7 @@
           </div><!-- sided-250x -->
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-3-250x250.jpg" alt="">
+              <img src="{% static 'images/news-3-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">New Zealand v England: Visitors have good chance of Test win - Jonny Bairstow</a></h4>
@@ -59,7 +60,7 @@
           </div><!-- sided-250x -->
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-4-250x250.jpg" alt="">
+              <img src="{% static 'images/news-4-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">Relations between Russia and the West are at a new low. But how should we
@@ -74,7 +75,7 @@
           </div><!-- sided-250x -->
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-5-250x250.jpg" alt="">
+              <img src="{% static 'images/news-5-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">California investigators have said a car that plunged off a roadside cliff,
@@ -89,7 +90,7 @@
           </div><!-- sided-250x -->
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-6-250x250.jpg" alt="">
+              <img src="{% static 'images/news-6-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">Facebook's chief executive has defended his leadership following criticism from his
@@ -104,7 +105,7 @@
           </div><!-- sided-250x -->
           <div class="sided-250x card-view">
             <div class="s-left">
-              <img src="images/news-7-250x250.jpg" alt="">
+              <img src="{% static 'images/news-7-250x250.jpg' %}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 plr-sm-20 pt-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">Tesla has been admonished by the US investigating a recent fatal crash
@@ -139,7 +140,7 @@
             <h4 class="p-title"><b>STAY CONNECT</b></h4>
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-1-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-1-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -152,7 +153,7 @@
             </div><!-- sided-80x -->
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-2-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-2-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -166,7 +167,7 @@
 
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-3-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-3-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -179,7 +180,7 @@
             </div><!-- sided-80x -->
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-4-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-4-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -192,7 +193,7 @@
             </div><!-- sided-80x -->
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-5-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-5-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -205,7 +206,7 @@
             </div><!-- sided-80x -->
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-6-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-6-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -218,7 +219,7 @@
             </div><!-- sided-80x -->
             <div class="sided-80x mb-20">
               <div class="s-left">
-                <img src="images/sidebar-news-7-100x100.jpg" alt="">
+                <img src="{% static 'images/sidebar-news-7-100x100.jpg' %}" alt="">
               </div><!-- s-left -->
               <div class="s-right">
                 <h5><a href="#">
@@ -244,7 +245,7 @@
             </div><!-- sided-80x -->
           </div><!-- card-view -->
           <div class="mb-30 p-30 card-view">
-            <img src="images/sidebar-review-400x300.jpg" alt="">
+             <img src="{% static 'images/sidebar-review-400x300.jpg' %}" alt="">
             <h4 class="mt-15"><a href="#">
                 <b>Berney Sander: Israel 'overreacted' during Gaza protest</b></a></h4>
             <ul class="mtb-10 list-li-mr-5 color-lite-black">
