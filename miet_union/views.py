@@ -9,5 +9,8 @@ def ourteam(request):
     context = {}
     return render(request, 'miet_union/ourteam.html', context)
 
+def MoneyHelp(request):
+    return render(request, 'miet_union/MoneyHelp.html')
+
 def test(request):
     return render(request, 'miet_union/test.html')

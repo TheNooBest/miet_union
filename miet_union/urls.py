@@ -5,6 +5,7 @@ from .views import (
     home,
     ourteam,
     test,
+    MoneyHelp,
 )
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('ourteam', ourteam, name='ourteam'),
     path('test', test, name='test'),
+    path('MoneyHelp', MoneyHelp, name='MoneyHelp'),
 ]
