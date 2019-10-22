@@ -6,12 +6,12 @@ def home(request):
     return render(request, 'miet_union/home.html', context)
 
 
-def ourteam(request):
+def our_team(request):
     context = {}
     return render(request, 'miet_union/ourteam.html', context)
 
 
-def moneyhelp(request):
+def money_help(request):
     return render(request, 'miet_union/moneyhelp.html')
 
 
@@ -19,11 +19,11 @@ def test(request):
     return render(request, 'miet_union/test.html')
 
 
-def socialcard(request):
+def social_card(request):
     return render(request, 'miet_union/socialcard.html')
 
 
-def helpproforg(request):
+def help_proforg(request):
     return render(request, 'miet_union/helpproforg.html')
 
 
@@ -39,13 +39,14 @@ def commissions(request):
     return render(request, 'miet_union/commissions.html')
 
 
-def normativedocument(request):
+def normative_document(request):
     return render(request, 'miet_union/normativedocument.html')
 
 
-def personaldataprotection(request):
+def personal_data_protection(request):
     return render(request, 'miet_union/personaldataprotection.html')
 
 
-def usefullinks(request):
+def useful_links(request):
     return render(request, 'miet_union/usefullinks.html')
+
