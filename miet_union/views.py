@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.contrib.auth import login, authenticate, logout
+from django.shortcuts import render, redirect
+
+from .forms import UserLoginForm
 
 
 def home(request):
@@ -50,3 +53,22 @@ def personal_data_protection(request):
 def useful_links(request):
     return render(request, 'miet_union/usefullinks.html')
 
+
+def login_view(request):
+    form = UserLoginForm(request.POST or None)
+    next_ = request.GET.get('next')
+    if form.is_valid():
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username.strip(),
+                            password=password.strip())
+        login(request, user)
+        next_post = request.POST.get('next')
+        rederict_path = next_ or next_post or '/'
+        return redirect(rederict_path)
+    return render(request, 'miet_union/login.html', {'form': form})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
