@@ -16,6 +16,7 @@ from .views import (
     useful_links,
     login_view,
     logout_view,
+    my_account
 )
 
 urlpatterns = [
@@ -35,4 +36,5 @@ urlpatterns = [
     path('usefullinks', useful_links, name='usefullinks'),
     path('login', login_view, name='login'),
     path('logout', logout_view, name='logout'),
+    path('my_account', my_account, name='my_account'),
 ]

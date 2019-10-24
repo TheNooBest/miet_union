@@ -54,6 +54,10 @@ def useful_links(request):
     return render(request, 'miet_union/usefullinks.html')
 
 
+def my_account(request):
+    return render(request, 'miet_union/myaccount.html')
+
+
 def login_view(request):
     form = UserLoginForm(request.POST or None)
     next_ = request.GET.get('next')
