@@ -23,42 +23,49 @@
     <div class="bottom-menu">
       <div class="container">
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
-         <ul class="main-menu" id="main-menu">
-					<li class="drop-down"><a href="/">Главная<i class=""></i></a>
-					</li>
-					<li class="drop-down"><a href="#!">Студенту<i class="ion-chevron-down"></i></a>
-						<ul class="drop-down-menu drop-down-inner">
-							<li><a href="#">Мат. помощь</a></li>
-							<li><a href="#">Соц. карта</a></li>
-              <li><a href="#">В помощь профоргу</a></li>
-						</ul>
-					</li>
-					<li class="drop-down"><a href="#!">Документы<i class="ion-chevron-down"></i></a>
-						<ul class="drop-down-menu drop-down-inner">
-							<li><a href="#">Защита персональных данных</a></li>
-							<li><a href="#">Нормативные документы</a></li>
-              <li><a href="#">Комиссии профкома</a></li>
-              <li><a href="#">Полезные ссылки</a></li>
-						</ul>
-					</li>
-					<li class="drop-down"><a href="#!">О нас<i class="ion-chevron-down"></i></a>
-						<ul class="drop-down-menu drop-down-inner">
-							<li><a href="#">О профкоме</a></li>
-							<li><a href="#">О профсоюзе</a></li>
+        <ul class="main-menu" id="main-menu">
+          <li class="drop-down"><a href="/">Главная<i class=""></i></a>
+          </li>
+          <li class="drop-down"><a>Студенту<i class="ion-chevron-down"></i></a>
+            <ul class="drop-down-menu drop-down-inner">
+              <li><a href="moneyhelp">Мат. помощь</a></li>
+              <li><a href="socialcard">Соц. карта</a></li>
+              <li><a href="helpproforg">В помощь профоргу</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a>Документы<i class="ion-chevron-down"></i></a>
+            <ul class="drop-down-menu drop-down-inner">
+              <li><a href="personaldataprotection">Защита персональных данных</a></li>
+              <li><a href="normativedocument">Нормативные документы</a></li>
+              <li><a href="commissions">Комиссии профкома</a></li>
+              <li><a href="usefullinks">Полезные ссылки</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a>О нас<i class="ion-chevron-down"></i></a>
+            <ul class="drop-down-menu drop-down-inner">
+              <li><a href="profcom">О профкоме</a></li>
+              <li><a href="profsouz">О профсоюзе</a></li>
               <li><a href="ourteam">Сотрудники</a></li>
-						</ul>
-					</li>
-        <div class="clearfix"></div>
+            </ul>
+          </li>
+          <li class="drop-down" style="float: right;">
+            {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'logout'%} ">Выйти</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'login'%} ">Войти</a>
+            {% endif %}
+          </li>
+            <div class="clearfix"></div>
       </div><!-- container -->
     </div><!-- bottom-menu -->
   </header>
-    <div class="container">
-      {% breadcrumb 'home' 'home' %}
-      {% for path in request|get_path_names %}
-      {% breadcrumb path path %}
-      {% endfor %}
-      {% render_breadcrumbs %}
-    </div>
+  <div class="container">
+    {% breadcrumb 'home' 'home' %}
+    {% for path in request|get_path_names %}
+    {% breadcrumb path path %}
+    {% endfor %}
+    {% render_breadcrumbs %}
+  </div>
   {% block content%}
   {% endblock%}
   <footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
@@ -98,15 +105,10 @@
           </div><!-- col-sm-3 -->
           <div class="col-sm-12 col-md-6">
             <ul class="mtb-5 font-11 text-md-center text-right list-a-p-5">
-              <li><a href="#">Home</a></li>
+              <li><a href="">Главная</a></li>
               <li><a href="#">Business</a></li>
               <li><a href="#">Sport</a></li>
               <li><a href="#">Politics</a></li>
-              <li><a href="#">Travel</a></li>
-              <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Culture</a></li>
-              <li><a href="#">Tech</a></li>
-              <li><a href="#">Video</a></li>
             </ul>
           </div><!-- col-sm-3 -->
         </div><!-- row -->
