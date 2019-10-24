@@ -14,6 +14,8 @@ from .views import (
     normative_document,
     personal_data_protection,
     useful_links,
+    login_view,
+    logout_view,
 )
 
 urlpatterns = [
@@ -31,4 +33,6 @@ urlpatterns = [
     path('personaldataprotection', personal_data_protection,
          name='personaldataprotection'),
     path('usefullinks', useful_links, name='usefullinks'),
+    path('login', login_view, name='login'),
+    path('logout', logout_view, name='logout'),
 ]
