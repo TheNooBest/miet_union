@@ -1,4 +1,5 @@
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import UserLoginForm
@@ -53,7 +54,7 @@ def personal_data_protection(request):
 def useful_links(request):
     return render(request, 'miet_union/usefullinks.html')
 
-
+@login_required
 def my_account(request):
     return render(request, 'miet_union/myaccount.html')
 
