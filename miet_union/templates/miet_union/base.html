@@ -50,7 +50,7 @@
             </ul>
           </li>
           {% if user.is_authenticated %}
-          <li class="drop-down" style="float: right;"><a>{{ user.get_username }}<i class="ion-chevron-down"></i></a>
+          <li class="drop-down" style="float: right;"><a>{{ user.first_name }} ({{user.email}}) <i class="ion-chevron-down"></i></a>
           {% else %}
           <li class="drop-down" style="float: right;"><a>Гость<i class="ion-chevron-down"></i></a>
           {% endif %}
@@ -62,7 +62,7 @@
               <a class="nav-link" href="{% url 'login'%}">Личный кабинет</a>
                 {% endif %}
                 {% if user.is_superuser %}
-              <li><a href="admin">Консоль администратора</a></li>
+              <li><a href="admin" style="background: red;">Консоль администратора</a></li>
                 {% else %}
                 {% endif %}
               <li>
