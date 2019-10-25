@@ -7,8 +7,8 @@ class Worker(models.Model):
     middle_name = models.CharField(max_length=100, verbose_name='Отчество')
     phone_num = models.CharField(max_length=11, verbose_name='Номер телефона')
     email = models.EmailField(max_length=254, verbose_name='Электронная почта')
-    photo = models.FileField(verbose_name='Фото')
 
+    photo = models.FileField(verbose_name='Фото')
     def __str__(self):
         return self.first_name
 
