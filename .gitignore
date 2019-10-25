@@ -139,6 +139,7 @@ fixtures/
 migrations/
 
 # Django MEDIA_ROOT
+/media/
 # /media/
 
 # Django STATIC_ROOT
