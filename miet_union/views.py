@@ -4,15 +4,22 @@ from django.shortcuts import render, redirect
 
 from .forms import UserLoginForm
 from news.models import News
+from ourteam.models import Worker
+
 
 def home(request):
     news = News.objects.all()
-    context = {'news': news }
+    context = {
+        'news': news,
+        }
     return render(request, 'miet_union/home.html', context)
 
 
 def our_team(request):
-    context = {}
+    worker = Worker.objects.all()
+    context = {
+        'worker': worker,
+        }
     return render(request, 'miet_union/ourteam.html', context)
 
 
