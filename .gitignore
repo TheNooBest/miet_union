@@ -136,7 +136,8 @@ dmypy.json
 fixtures/
 
 # Django migrations
-migrations/
+news/migrations/*_initial.py
+ourteam/migrations/*_initial.py
 
 # Django MEDIA_ROOT
 /media/
@@ -152,3 +153,4 @@ Thumbs.db
 vscode/
 .vscode/
 /.vscode/
+
