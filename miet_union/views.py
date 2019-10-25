@@ -3,10 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import UserLoginForm
-
+from news.models import News
 
 def home(request):
-    context = {'name': 'union_test'}
+    news = News.objects.all()
+    context = {'news': news }
     return render(request, 'miet_union/home.html', context)
 
 
