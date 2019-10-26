@@ -8,6 +8,7 @@ class WorkerAdmin(admin.ModelAdmin):
     list_display = ('first_name',
                     'last_name',
                     'middle_name',
+                    'position',
                     'phone_num',
                     'email',
                     'photo',

@@ -137,7 +137,9 @@ fixtures/
 
 # Django migrations
 news/migrations/*_initial.py
+news/migrations/*_auto*.py
 ourteam/migrations/*_initial.py
+ourteam/migrations/*_auto*.py
 
 # Django MEDIA_ROOT
 /media/
