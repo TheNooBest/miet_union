@@ -12,7 +12,7 @@
       <div class="col-md-12 col-lg-6">
         <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
           <h4 class="p-title"><b>{{ worker.last_name }} {{ worker.first_name }} {{ worker.middle_name }}</b></h4>
-          <img src="{% static 'images/news-1-700x400.jpg' %}" alt="">
+          <img src="{{ worker.photo }}" alt="">
           <h3 class="mt-30"></h3>
           <ul class="mtb-10 list-li-mr-20 color-lite-black">
             <li><i class="mr-5 font-12 ion-clock"></i>Jan 25, 2018</li>
@@ -20,7 +20,7 @@
             <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>15</li>
             <li><i class="mr-5 font-12 ion-eye"></i>105</li>
           </ul>
-          <p>Работает у наш уже 15 минут, 11 секунд. Наш лучший сотрудник</p>
+          <p>{{ worker.last_name }} {{ worker.first_name }} - здесь надо добавить поле с описанием сотрудника</p>
         </div><!-- bg-white -->
         </div>
         {% endfor %}
