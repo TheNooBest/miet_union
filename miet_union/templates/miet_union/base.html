@@ -78,13 +78,6 @@
       </div><!-- container -->
     </div><!-- bottom-menu -->
   </header>
-  <div class="container">
-    {% breadcrumb 'home' 'home' %}
-    {% for path in request|get_path_names %}
-    {% breadcrumb path path %}
-    {% endfor %}
-    {% render_breadcrumbs %}
-  </div>
   {% block content%}
   {% endblock%}
   <footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
