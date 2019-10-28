@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from .views import (
     home,
@@ -39,6 +39,7 @@ urlpatterns = [
     path('login', login_view, name='login'),
     path('logout', logout_view, name='logout'),
     path('my_account', my_account, name='my_account'),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

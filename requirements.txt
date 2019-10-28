@@ -6,6 +6,7 @@ colorama==0.4.1
 decorator==4.4.0
 Django==2.2.6
 django-bootstrap-breadcrumbs==0.9.1
+django-summernote==0.8.11.4
 django-view-breadcrumbs==0.1.0
 entrypoints==0.3
 flake8==3.7.8
