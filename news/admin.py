@@ -1,13 +1,14 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import News
 
-class NewsAdmin(admin.ModelAdmin):
-    class Meta:
-        model = News
+class NewsAdmin(SummernoteModelAdmin):
+    summernote_fields = 'title, main_text'
+    fields = ['title', 'main_text', 'image', 'created']
     list_display = ('title',
                     'main_text',
                     'image',
-                    )
-    list_filter = ('title', 'main_text')
+                    'created',)
+    list_filter = ('title', 'main_text', 'created')
 
 admin.site.register(News, NewsAdmin)
