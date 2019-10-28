@@ -6,7 +6,7 @@ class News(models.Model):
     main_text = models.CharField(max_length = 2000, verbose_name='Текст новости')
     image = models.FileField(
         upload_to="media/news/images", verbose_name='Изображение')
-    created = models.DateField(default=timezone.now)
+    created = models.DateField(default=timezone.now, verbose_name='Дата создания')
 
     def __str__(self):
         return self.title
@@ -14,4 +14,4 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['title']
+        ordering = ['-created']
