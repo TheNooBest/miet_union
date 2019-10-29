@@ -2,15 +2,18 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
+from miet_union.vk_parser import vk_parse
 from .forms import UserLoginForm
 from news.models import News
 from ourteam.models import Worker
 
 
 def home(request):
+    members = vk_parse()
     news = News.objects.all()
     context = {
         'news': news,
+        'members': members,
         }
     return render(request, 'miet_union/home.html', context)
 
