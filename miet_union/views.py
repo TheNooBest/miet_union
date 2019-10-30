@@ -9,12 +9,13 @@ from ourteam.models import Worker
 
 
 def home(request):
-    members = vk_parse()
+    
     news = News.objects.all()
     context = {
         'news': news,
-        'members': members,
         }
+    members = vk_parse()
+    context.update({'members': members})
     return render(request, 'miet_union/home.html', context)
 
 
