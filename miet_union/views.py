@@ -8,8 +8,7 @@ from news.models import News
 from ourteam.models import Worker
 
 
-def home(request):
-    
+def home(request):   
     news = News.objects.all()
     context = {
         'news': news,
