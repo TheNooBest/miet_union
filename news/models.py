@@ -5,7 +5,7 @@ class News(models.Model):
     title = models.CharField(max_length=250, verbose_name='Заголовок')
     main_text = models.CharField(max_length = 2000, verbose_name='Текст новости')
     image = models.FileField(
-        upload_to="media/news/images", verbose_name='Изображение')
+        upload_to="news/images", verbose_name='Изображение')
     created = models.DateField(default=timezone.now)
 
     def __str__(self):

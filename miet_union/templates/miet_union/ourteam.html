@@ -12,7 +12,8 @@
       <div class="col-md-12 col-lg-6">
         <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
           <h4 class="p-title"><b>{{ worker.last_name }} {{ worker.first_name }} {{ worker.middle_name }}</b></h4>
-          <img src="{{ worker.photo }}" alt="{{ worker.last_name }} {{ worker.first_name }} {{ worker.middle_name }}">
+          {% comment %} need to refactor {% endcomment %}
+          <img src="/media/{{ worker.photo }}" alt="">
           <h3 class="mt-30"></h3>
           <p>{{ worker.last_name }} {{ worker.first_name }} - {{ worker.position }}</p>
         </div><!-- bg-white -->
