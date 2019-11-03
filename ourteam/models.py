@@ -9,7 +9,11 @@ class Worker(models.Model):
     phone_num = models.CharField(max_length=11, verbose_name='Номер телефона')
     email = models.EmailField(max_length=254, verbose_name='Электронная почта')
     photo = models.ImageField(
-        upload_to="media/images", verbose_name='Фото')
+<<<<<<< HEAD
+        upload_to="workers/images", verbose_name='Фото')
+=======
+        upload_to="workers/images", verbose_name='Фото')
+>>>>>>> f955117249fd1d0bd92e3b8b90eb6048206efbeb
 
     def __str__(self):
         return self.first_name

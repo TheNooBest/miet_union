@@ -19,4 +19,3 @@ class UserLoginForm(forms.Form):
             if not user.check_password(password):
                 raise forms.ValidationError('Неверный пароль')
         return super(UserLoginForm, self).clean(*args, **kwargs)
-
