@@ -31,7 +31,12 @@
             {% for news in news  %}
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="media/{{news.image}}" alt="">
+<<<<<<< HEAD
+              <img src="/media/{{news.image}}" alt="">
+=======
+              {% comment %} need to refactor {% endcomment %}
+              <img src="/media/{{ news.image }}" alt="">
+>>>>>>> f955117249fd1d0bd92e3b8b90eb6048206efbeb
             </div><!-- left-area -->
             <div class="s-right ptb-50 p-sm-20 pb-sm-5 plr-30 plr-xs-0">
               <h4><a href="#">{{ news.title|safe }}</a></h4>
