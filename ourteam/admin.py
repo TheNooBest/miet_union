@@ -15,4 +15,5 @@ class WorkerAdmin(admin.ModelAdmin):
                     )
     list_filter = ('last_name', 'first_name')
 
+
 admin.site.register(Worker, WorkerAdmin)

@@ -31,11 +31,11 @@
             {% for news in news  %}
           <div class="mb-30 sided-250x card-view">
             <div class="s-left">
-              <img src="{% static 'images/news-2-250x250.jpg' %}" alt="">
+              <img src="media/{{news.image}}" alt="">
             </div><!-- left-area -->
             <div class="s-right ptb-50 p-sm-20 pb-sm-5 plr-30 plr-xs-0">
-              <h4><a href="#">{{ news.title }}</a></h4>
-                <p>{{ news.main_text }}</p>
+              <h4><a href="#">{{ news.title|safe }}</a></h4>
+                <p>{{ news.main_text|safe }}</p>
               <ul class="mtb-10 list-li-mr-20 color-lite-black">
                 <li><i class="mr-5 font-12 ion-clock"></i>Jan 25, 2018</li>
                 <li><i class="mr-5 font-12 ion-android-person"></i>John Dowson</li>
