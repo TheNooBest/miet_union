@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from .forms import UserLoginForm
 from news.models import News
 from ourteam.models import Worker
-
+from django.shortcuts import render, get_object_or_404
 
 def home(request):
     news = News.objects.all()
@@ -85,3 +85,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+def news_page(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    return render(request, 'miet_union/news_page.html', {'news': news})

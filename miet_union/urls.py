@@ -18,7 +18,8 @@ from .views import (
     useful_links,
     login_view,
     logout_view,
-    my_account
+    my_account,
+    news_page
 )
 
 urlpatterns = [
@@ -40,6 +41,7 @@ urlpatterns = [
     path('logout', logout_view, name='logout'),
     path('my_account', my_account, name='my_account'),
     path('summernote/', include('django_summernote.urls')),
+    path('news/<int:pk>', news_page, name='news_page'),
 ]
 
 if settings.DEBUG:
