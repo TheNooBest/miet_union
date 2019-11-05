@@ -54,10 +54,11 @@
             <h4 class="p-title"><b>Оставайтесь на связи</b></h4>
             <ul
               class="font-12 text-center color-white list-block list-a-block list-a-ptb-10 list-li-mb-10 list-a-br-5 list-a-hvr-primary">
-              <li><a class="bg-fb" href="#"><i class="mr-10 sqr-fb-20 ion-social-facebook"></i><b>2135</b> followers</a></li>
-              <li><a class="bg-twtr" href="#"><i class="mr-10 sqr-twtr-20 ion-social-twitter"></i><b>5176</b> followers</a></li>
-              <li><a class="bg-gogl" href="#"><i class="mr-10 sqr-gogl-20 ion-social-googleplus"></i><b>2244</b> followers</a></li>
-              <li><a class="bg-rss" href="#"><i class="mr-10 sqr-rss-20 ion-social-rss"></i><b>2111</b> followers</a></li>
+                {% if members %}
+              <li><a class="bg-fb" href="#"><i class="mr-10 sqr-fb-20 ion-social-facebook"></i><b>{{ members }}</b> followers</a></li>
+                {% else %}
+                <li><a class="bg-fb" href="#"><i class="mr-10 sqr-fb-20 ion-social-facebook"></i><b>?</b> followers</a></li>
+                {% endif %}
             </ul>
           </div><!-- card-view -->
           <div class="mb-30 p-30 card-view">
