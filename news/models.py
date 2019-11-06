@@ -9,6 +9,7 @@ class News(models.Model):
         upload_to="news/images", verbose_name='Изображение')
     created = models.DateField(default=timezone.now, verbose_name='Дата создания')
 
+
     def __str__(self):
         return self.title
 

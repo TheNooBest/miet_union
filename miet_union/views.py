@@ -2,16 +2,19 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
+from miet_union.vk_parser import vk_parse
 from .forms import UserLoginForm
 from news.models import News
 from ourteam.models import Worker
+from django.shortcuts import render, get_object_or_404
 
-
-def home(request):
+def home(request):   
     news = News.objects.all()
     context = {
         'news': news,
         }
+    members = vk_parse()
+    context.update({'members': members})
     return render(request, 'miet_union/home.html', context)
 
 
@@ -85,3 +88,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+def news_page(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    return render(request, 'miet_union/news_page.html', {'news': news})
