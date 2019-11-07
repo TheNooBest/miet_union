@@ -44,16 +44,20 @@
         </div><!-- col-sm-8 -->
         <div class="col-md-12 col-lg-4">
           <div class="mb-30 mt-md-30 p-30 card-view">
-            <h4 class="p-title"><b>Оставайтесь на связи</b></h4>
-            <ul
-              class="font-12 text-center color-white list-block list-a-block list-a-ptb-10 list-li-mb-10 list-a-br-5 list-a-hvr-primary">
-                {% if members %}
-              <li><a class="bg-fb" href="#"><i class="mr-10 sqr-fb-20 ion-social-facebook"></i><b>{{ members }}</b> followers</a></li>
-                {% else %}
-                <li><a class="bg-fb" href="#"><i class="mr-10 sqr-fb-20 ion-social-facebook"></i><b>?</b> followers</a></li>
-                {% endif %}
+            <h4 class="p-title"><b>Мы вконтакте</b></h4>
+            <ul>
+              <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
+              <!-- VK Widget -->
+              <div id="vk_groups"></div>
+              <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {
+                  mode: 3,
+                  width: "auto",
+                  no_cover: 0,
+                }, 20030105);
+              </script>    
             </ul>
-          </div><!-- card-view -->
+        </div><!-- card-view -->
           <div class="mb-30 p-30 card-view">
             <h4 class="p-title"><b>Популярные новости</b></h4>
             <div class="sided-80x mb-20">
