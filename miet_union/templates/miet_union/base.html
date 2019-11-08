@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700" rel="stylesheet">
+  <link rel "shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico'%}">
   <!-- Stylesheets -->
   {% block styles %}
   <link href="{% static 'plugin-frameworks/bootstrap.css' %}" rel="stylesheet">
@@ -50,21 +51,22 @@
             </ul>
           </li>
           {% if user.is_authenticated %}
-          <li class="drop-down" style="float: right;"><a>{{ user.first_name }} ({{user.email}}) <i class="ion-chevron-down"></i></a>
-          {% else %}
+          <li class="drop-down" style="float: right;"><a>{{ user.first_name }} ({{user.email}}) <i
+                class="ion-chevron-down"></i></a>
+            {% else %}
           <li class="drop-down" style="float: right;"><a>Гость<i class="ion-chevron-down"></i></a>
-          {% endif %}
+            {% endif %}
             <ul class="drop-down-menu drop-down-inner">
               <li>
                 {% if user.is_authenticated %}
-              <a href="{% url 'my_account'%}">Личный кабинет</a></li>
-                {% else %}
+                <a href="{% url 'my_account'%}">Личный кабинет</a></li>
+              {% else %}
               <a class="nav-link" href="{% url 'login'%}">Личный кабинет</a>
-                {% endif %}
-                {% if user.is_superuser %}
+              {% endif %}
+              {% if user.is_superuser %}
               <li><a href="admin" style="background: red;">Консоль администратора</a></li>
-                {% else %}
-                {% endif %}
+              {% else %}
+              {% endif %}
               <li>
                 {% if user.is_authenticated %}
                 <a class="nav-link" href="{% url 'logout'%} ">Выйти</a>
@@ -80,52 +82,62 @@
   </header>
   {% block content%}
   {% endblock%}
-  <footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
-    <div class="container">
-      <div class="text-center ptb-30">
-        <div class="row">
-          <div class="col-sm-3">
-            {% comment %} Лого профкома {% endcomment %}
-          </div><!-- col-sm-3 -->
-          <div class="col-sm-5">
-            <p class="mtb-10">Подписывайтесь на наши страницы в социальных сетях.</p>
-          </div><!-- col-sm-3 -->
-          <div class="col-sm-4">
-            <ul class="mtb-10 font-12 list-radial-35 list-li-mlr-3">
-              <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-              <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-              <li><a href="#"><i class="ion-social-google"></i></a></li>
-              <li><a href="#"><i class="ion-social-rss"></i></a></li>
-            </ul>
-          </div><!-- col-sm-3 -->
-        </div><!-- row -->
-      </div><!-- text-center -->
-    </div><!-- container -->
-    <div class="bg-dark-primary ptb-15 text-left">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <p class="text-md-center font-9 pt-5 mtb-5">
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>
+	<footer class="bg-191 pos-relative color-ccc bg-primary pt-50">
+		<div class="abs-tblr pt-50 z--1 text-center">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-8 col-sm-8">	
+					<h5 class="f-title"><b>Студенту</b></h5>
+					<ul class="mb-30 list-hover list-block list-a-ptb-5">
+						<li><a href="{% url 'moneyhelp' %}">Мат. помощь</a></li>
+						<li><a href="{% url 'socialcard' %}">Соц. карта</a></li>
+						<li><a href="{% url 'helpproforg' %}">В помощь профоргу</a></li>
+					</ul>
+				</div><!-- col-sm-4 -->			
+				<div class="col-lg-4 col-md-8 col-sm-8">	
+					<h5 class="f-title"><b>Документы</b></h5>
+					<ul class="mb-30 list-hover list-block list-a-ptb-5">
+						<li><a href="{% url 'personaldataprotection' %}">Защита персональных данных</a></li>
+						<li><a href="{% url 'normativedocument' %}">Нормативные документы</a></li>
+						<li><a href="{% url 'commissions' %}">Комиссии профкома</a></li>
+						<li><a href="{% url 'usefullinks' %}">Полезные ссылки</a></li>
+					</ul>
+				</div><!-- col-sm-4 -->				
+				<div class="col-lg-4 col-md-8 col-sm-8">	
+					<h5 class="f-title"><b>О нас</b></h5>
+					<ul class="mb-30 list-hover list-block list-a-ptb-5">
+						<li><a href="{% url 'profcom' %}">О профкоме</a></li>
+						<li><a href="{% url 'profsouz' %}">О профсоюзе</a></li>
+						<li><a href="{% url 'ourteam' %}">Сотрудники</a></li>
+					</ul>
+				</div><!-- col-sm-4 -->						
+			</div><!-- row -->		
+			<div class="mt-20 brdr-ash-1 opacty-4"></div>			
+			<div class="text-center ptb-30">
+				<div class="row">
+					<div class="col-sm-3">
+						 <p class="text-md-center font-9 pt-5 mtb-5" style="font-size: 15px;">
+              &copy; <script>
                 document.write(new Date().getFullYear());
-              </script> All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </script> MIET
             </p>
-          </div><!-- col-sm-3 -->
-          <div class="col-sm-12 col-md-6">
-            <ul class="mtb-5 font-11 text-md-center text-right list-a-p-5">
-              <li><a href="">Главная</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Sport</a></li>
-              <li><a href="#">Politics</a></li>
-            </ul>
-          </div><!-- col-sm-3 -->
-        </div><!-- row -->
-      </div><!-- container -->
-    </div><!-- container -->
+					</div><!-- col-sm-3 -->			
+					<div class="col-sm-5">
+						<p class="mtb-10">Подписывайтесь на наши социальные сети</p>
+					</div><!-- col-sm-3 -->				
+					<div class="col-sm-4">
+						<ul class="mtb-10 font-12 list-radial-35 list-li-mlr-3">
+							<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+							<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+							<li><a href="#"><i class="ion-social-google"></i></a></li>
+							<li><a href="#"><i class="ion-social-rss"></i></a></li>
+						</ul>
+					</div><!-- col-sm-3 -->
+				</div><!-- row -->
+			</div><!-- text-center -->
+		</div><!-- container -->
   </footer>
   <!-- SCIPTS -->
   <script src="{% static 'plugin-frameworks/jquery-3.2.1.min.js' %}"></script>
