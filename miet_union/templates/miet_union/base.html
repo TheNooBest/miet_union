@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700" rel="stylesheet">
+  <link rel "shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico'%}">
   <!-- Stylesheets -->
   {% block styles %}
   <link href="{% static 'plugin-frameworks/bootstrap.css' %}" rel="stylesheet">
@@ -89,26 +90,26 @@
 				<div class="col-lg-4 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>Студенту</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="#">Мат. помощь</a></li>
-						<li><a href="#">Соц. карта</a></li>
-						<li><a href="#">В помощь профоргу</a></li>
+						<li><a href="{% url 'moneyhelp' %}">Мат. помощь</a></li>
+						<li><a href="{% url 'socialcard' %}">Соц. карта</a></li>
+						<li><a href="{% url 'helpproforg' %}">В помощь профоргу</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->			
 				<div class="col-lg-4 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>Документы</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="#">Защита персональных данных</a></li>
-						<li><a href="#">Нормативные документы</a></li>
-						<li><a href="#">Комиссии профкома</a></li>
-						<li><a href="#">Полезные ссылки</a></li>
+						<li><a href="{% url 'personaldataprotection' %}">Защита персональных данных</a></li>
+						<li><a href="{% url 'normativedocument' %}">Нормативные документы</a></li>
+						<li><a href="{% url 'commissions' %}">Комиссии профкома</a></li>
+						<li><a href="{% url 'usefullinks' %}">Полезные ссылки</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->				
 				<div class="col-lg-4 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>О нас</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="#">О профкоме</a></li>
-						<li><a href="#">О профсоюзе</a></li>
-						<li><a href="#">Сотрудники</a></li>
+						<li><a href="{% url 'profcom' %}">О профкоме</a></li>
+						<li><a href="{% url 'profsouz' %}">О профсоюзе</a></li>
+						<li><a href="{% url 'ourteam' %}">Сотрудники</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->						
 			</div><!-- row -->		

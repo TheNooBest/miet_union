@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 from .views import (
     home,
@@ -42,8 +43,10 @@ urlpatterns = [
     path('my_account', my_account, name='my_account'),
     path('summernote/', include('django_summernote.urls')),
     path('news/<int:pk>', news_page, name='news_page'),
+    path('favicon.ico', RedirectView.as_view(
+        url='/static/images/favicon.ico')),
 ]
 
 if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
-                              document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
