@@ -26,6 +26,7 @@ from .views import (
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
+    path('admin_tools/', include('admin_tools.urls')),
     path('commissions', commissions, name='commissions'),
     path('favicon.ico', RedirectView.as_view(
         url='/static/images/favicon.ico')),
