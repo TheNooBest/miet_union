@@ -7,6 +7,7 @@ chardet==3.0.4
 colorama==0.4.1
 decorator==4.4.0
 Django==2.2.6
+django-admin-tools==0.8.1
 django-bootstrap-breadcrumbs==0.9.1
 django-summernote==0.8.11.4
 django-view-breadcrumbs==0.1.0
@@ -38,6 +39,5 @@ toml==0.10.0
 traitlets==4.3.3
 urllib3==1.25.6
 virtualenv==16.7.5
-vk==2.0.2
 wcwidth==0.1.7
 zipp==0.6.0
