@@ -20,7 +20,7 @@ class NewsAdmin(SummernoteModelAdmin):
     fields = ['title', 'main_text', 'image', 'created']
     list_display = ('title',
                     'created',)
-    list_filter = ('title', 'main_text', 'created')
+    list_filter = ('created',)
 
 
 class WorkerAdmin(admin.ModelAdmin):
