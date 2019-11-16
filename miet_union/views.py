@@ -1,13 +1,14 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
 
 from .forms import UserLoginForm
 from news.models import News
 from ourteam.models import Worker
-from django.shortcuts import render, get_object_or_404
 
-def home(request):   
+
+def home(request):
     news = News.objects.all()
     context = {
         'news': news,
@@ -47,6 +48,10 @@ def profsouz(request):
     return render(request, 'miet_union/profsouz.html')
 
 
+def test_404(request):
+    return render(request, 'miet_union/404.html')
+
+
 def commissions(request):
     return render(request, 'miet_union/commissions.html')
 
@@ -61,6 +66,7 @@ def personal_data_protection(request):
 
 def useful_links(request):
     return render(request, 'miet_union/usefullinks.html')
+
 
 @login_required
 def my_account(request):
@@ -86,6 +92,23 @@ def logout_view(request):
     logout(request)
     return redirect('home')
 
+
 def news_page(request, pk):
     news = get_object_or_404(News, pk=pk)
     return render(request, 'miet_union/news_page.html', {'news': news})
+
+
+def error_400(request, exception):
+    return render(request, 'miet_union/400.html')
+
+
+def error_403(request, exception):
+    return render(request, 'miet_union/403.html')
+
+
+def error_404(request, exception):
+    return render(request, 'miet_union/404.html')
+
+
+def error_500(request):
+    return render(request, 'miet_union/500.html')
