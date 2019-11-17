@@ -117,7 +117,7 @@ i{ display: inline-block; }
 3. HEADER
 --------------------------------- */
 
-header{ position: relative; z-index: 1000; font-weight: 600; font-size: 1.3em; }
+header{ position: relative; z-index: 1000; font-size: 1.4em;}
 
 
 /* TOP HEADER */
@@ -421,7 +421,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 .bg-white{ background: #fff; }
 .bg-191{ background: #191919; }
 .bg-primary{ background: #0f45c7!important; }
-.bg-dark-primary{ background: #0f45c7!important; }
+.bg-dark-primary{ background: #0a328f!important; }
 
 
 /* SHAPE */
@@ -790,7 +790,7 @@ section{ padding: 50px 0; }
 .quote-primary{ padding: 10px 20px; border-left: 2px solid #0f45c7; }
 
 
-footer p{ color: #ddd; }
+footer p{ color: #fff; }
 footer a:focus,
 footer a:hover{ color: #fff; }
 
