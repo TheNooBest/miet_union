@@ -22,14 +22,16 @@
         </div><!-- bg-white -->
         {% if news %}
         {% for news in news  %}
-        <div class="mb-30 sided-250x card-view">
+        <div class="mb-30 sided-350x card-view">
           <div class="s-left">
             {% comment %} need to refactor {% endcomment %}
             <img src="/media/{{ news.image }}" alt="">
           </div><!-- left-area -->
-          <div class="s-right ptb-50 p-sm-20 pb-sm-5 plr-30 plr-xs-0">
-            <h4><a href="{% url 'news_page' pk=news.pk %}">{{ news.title|safe }}</a></h4>
-            <p>{{ news.main_text|safe|truncatechars:57 }}</p>
+          <div class="s-right ptb-0 p-sm-20 pb-sm-0 plr-30 plr-xs-0">
+            <h4><a href="{% url 'news_page' pk=news.pk %}" style="font-weight: 500; font-size: 1.15em; padding-top: 15px; padding-bottom: 15px;">{{ news.title|truncatechars:60 }}</a></h4>
+            <div class="ptb-20 p-sm-20 pb-sm-0 plr-xs-0">
+            {% comment %} <p>{{ news.main_text|safe|truncatechars:90 }}</p> {% endcomment %}
+            </div>
             <ul class="mtb-10 list-li-mr-20 color-lite-black">
               <li><i class="mr-5 font-12 ion-clock"></i>{{ news.created }}</li>
             </ul>
