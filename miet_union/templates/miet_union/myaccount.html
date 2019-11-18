@@ -1,7 +1,22 @@
 {% extends "miet_union/base.html" %}
+{% load static %}
 {% load django_bootstrap_breadcrumbs %}
 {% block title %} Тестовая страница {% endblock %}
 {% block content %}
-<h3 class="mt-30"><a href="#">WPP is investigating an allegation of personal misconduct against
-                its chief executive Sir Martin Sorrell.</a></h3>
+<section class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
+            <h4 class="p-title"><b>Мой аккаунт</b></h4>
+            <img src="{% static 'images/news-1-700x400.jpg' %}" alt="">
+            <h3 class="mt-30"><a href="#">Пример текста</a></h3>
+            <ul class="mtb-10 list-li-mr-20 color-lite-black">
+              <li><i class="mr-5 font-12 ion-clock"></i>6 ноября 2019 г.</li>
+            </ul>
+          </div><!-- bg-white -->
+        </div><!-- col-sm-8 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </section>
 {% endblock %}

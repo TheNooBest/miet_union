@@ -1,3 +1,4 @@
+from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -19,7 +20,7 @@ from .views import (
     profcom,
     profsouz,
     social_card,
-    test,
+    test_404,
     useful_links,
 )
 
@@ -44,10 +45,15 @@ urlpatterns = [
     path('profsouz', profsouz, name='profsouz'),
     path('socialcard', social_card, name='socialcard'),
     path('summernote/', include('django_summernote.urls')),
-    path('test', test, name='test'),
+    path('test', test_404, name='test'),
     path('usefullinks', useful_links, name='usefullinks'),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+handler400 = 'miet_union.views.error_400'
+handler403 = 'miet_union.views.error_403'
+handler404 = 'miet_union.views.error_404'
+handler500 = 'miet_union.views.error_500'
