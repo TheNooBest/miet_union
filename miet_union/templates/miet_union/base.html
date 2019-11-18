@@ -80,12 +80,15 @@
       </div><!-- container -->
     </div><!-- bottom-menu -->
   </header>
+
   {% block content%}
   {% endblock%}
-	<footer class="bg-191 pos-relative color-white bg-primary pt-50 font-11">
+
+  <div class="footer">
+	<footer class="bg-191 pos-relative color-white bg-primary pt-50 font-11" style="margin-top: 270px;">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-8 col-sm-8">	
+				<div class="col-lg-3 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>Студенту</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
 						<li><a href="{% url 'moneyhelp' %}">Мат. помощь</a></li>
@@ -102,13 +105,16 @@
 						<li><a href="{% url 'usefullinks' %}">Полезные ссылки</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->				
-				<div class="col-lg-4 col-md-8 col-sm-8">	
+				<div class="col-lg-2 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>О нас</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
 						<li><a href="{% url 'profcom' %}">О профкоме</a></li>
 						<li><a href="{% url 'profsouz' %}">О профсоюзе</a></li>
 						<li><a href="{% url 'ourteam' %}">Сотрудники</a></li>
 					</ul>
+				</div><!-- col-sm-4 -->
+        <div class="col-lg-3 col-md-8 col-sm-8">	
+					<img src="{% static 'images/emblema_white.png'%}" style="width: 70%">
 				</div><!-- col-sm-4 -->						
 			</div><!-- row -->		
 			<div class="mt-20 brdr-ash-1 opacty-4"></div>			
