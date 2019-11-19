@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class UserLoginForm(forms.Form):
@@ -19,3 +21,4 @@ class UserLoginForm(forms.Form):
             if not user.check_password(password):
                 raise forms.ValidationError('Неверный пароль')
         return super(UserLoginForm, self).clean(*args, **kwargs)
+
