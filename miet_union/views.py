@@ -13,6 +13,19 @@ def home(request):
     context = {
         'news': news,
         }
+
+    form = UserLoginForm(request.POST or None)
+    next_ = request.GET.get('next')
+    if form.is_valid():
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username.strip(),
+                            password=password.strip())
+        login(request, user)
+        next_post = request.POST.get('next')
+        rederict_path = next_ or next_post or '/'
+        return redirect(rederict_path)
+    context.update({'form': form})
     return render(request, 'miet_union/home.html', context)
 
 

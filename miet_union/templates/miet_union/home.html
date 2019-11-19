@@ -38,12 +38,20 @@
               <li><i class="mr-5 font-12 ion-clock"></i>{{ news.created }}</li>
             </ul>
           </div><!-- right-area -->
-        </div><!-- sided-250x -->
+        </div><!-- sided-350x -->
         {% endfor %}
         {% endif %}
       </div><!-- col-sm-8 -->
       <!-- START OF SIDEBAR NEWSLETTER -->
       <div class="col-md-12 col-lg-4">
+        <div class="mb-30 mt-md-30 p-30 card-view">
+          <h4 class="p-title"><b>Войти</b></h4>
+          <form action="" class="form-sm max-w-400x mlr-auto" method="post"> {% csrf_token %}
+            {{form.as_p}}
+              <h6><button class="mt-15 plr-20 btn-b-sm btn-fill-primary dplay-block" type="submit"
+                style="font-size: 1.1em;"><b>Войти</b></button></h6>
+          </form>
+        </div><!-- card-view -->
         <div class="mb-30 mt-md-30 p-30 card-view">
           <h4 class="p-title"><b>Мы вконтакте</b></h4>
           <ul>
