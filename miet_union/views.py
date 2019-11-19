@@ -2,6 +2,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .forms import UserLoginForm
 from news.models import News
@@ -10,10 +11,20 @@ from ourteam.models import Worker
 
 def home(request):
     news = News.objects.all()
+    paginator = Paginator(news, 1)
+
+    page = request.GET.get('page')
+    try:
+        news = paginator.page(page)
+    except PageNotAnInteger:
+        news = paginator.page(1)
+    except EmptyPage:
+        news = paginator.page(paginator.num_pages)
+
     context = {
         'news': news,
         }
-
+    
     form = UserLoginForm(request.POST or None)
     next_ = request.GET.get('next')
     if form.is_valid():
@@ -109,6 +120,7 @@ def logout_view(request):
 def news_page(request, pk):
     news = get_object_or_404(News, pk=pk)
     return render(request, 'miet_union/news_page.html', {'news': news})
+
 
 
 def error_400(request, exception):
