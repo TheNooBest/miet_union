@@ -1,0 +1,26 @@
+{% extends "miet_union/base.html" %}
+{% block title %}Страница регистрации{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<div class="row mx-auto">
+		<div class='col-md-6 offset-md-3 '>
+			<h1 class="" style="text-align: center;">Регистрация</h1>
+			<form action="" method="post"> {% csrf_token %}
+				{{form.as_p}}
+				<div class='btn-block'>
+                    {% comment %}<div class='col-md-12 offset-md-0 btn-block'>{% endcomment %}
+				<br><input type="submit" value="Зарегистрироваться" class="btn-secondary active font-11">
+				</div>
+
+			</form>
+
+
+		</div>
+
+	</div>
+</div>
+{% comment %} TODO refactor {% endcomment %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
