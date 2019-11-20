@@ -39,7 +39,7 @@ class CustomIndexDashBoard(Dashboard):
                     title=('Студенту'),
                     models=('documents.models.HelpForProforg',
                             'documents.models.HelpForStudentProforg',
-                            'TheMainActivitiesOfProforg',),
+                            'documents.models.TheMainActivitiesOfProforg',),
                 ),
                 modules.ModelList(
                     title=('Документы'),
