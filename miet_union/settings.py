@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'miet_union',
     'ourteam',
     'news',
+    'documents',
 ]
 
 MIDDLEWARE = [
