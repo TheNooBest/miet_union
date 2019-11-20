@@ -27,7 +27,7 @@ class CustomIndexDashBoard(Dashboard):
         )
         self.children.append(
             modules.ModelList(
-                title=('Пользователи'),
+                title=('Пользователи и группы'),
                 models=('django.contrib.*',),
             ),
         )
