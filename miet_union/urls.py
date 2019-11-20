@@ -22,6 +22,7 @@ from .views import (
     social_card,
     test_404,
     useful_links,
+    registration_view,
 )
 
 urlpatterns = [
@@ -47,6 +48,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('test', test_404, name='test'),
     path('usefullinks', useful_links, name='usefullinks'),
+    path('registration', registration_view, name='registration'),
 ]
 
 if settings.DEBUG:
