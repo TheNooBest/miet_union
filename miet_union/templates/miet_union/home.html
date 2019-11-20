@@ -43,6 +43,7 @@
         {% endif %}
         {% endfor %}
         {% endif %}
+        {% if news %}
         <nav aria-label="...">
           <ul class="pagination ">
             {% if news.has_previous %}
@@ -68,6 +69,7 @@
             </li>
           </ul>
         </nav>
+        {% endif %}
       </div><!-- col-sm-8 -->
       <!-- START OF SIDEBAR NEWSLETTER -->
       <div class="col-md-12 col-lg-4">
