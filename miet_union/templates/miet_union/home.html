@@ -42,29 +42,33 @@
         </div><!-- sided-350x -->
         {% endfor %}
         {% endif %}
-      <div class="pagination">
-                  <span class="step-links">
-                      {% if news.has_previous %}
-                           <a href="?page={{ news.previous_page_number }}">previous</a>
-                      {% endif %}
-                   <span class="current">
-                       Page {{ news.number }} of {{ news.paginator.num_pages }}
-                   </span>
-                  {% if news.has_next %}
-                      <a href="?page={{ news.next_page_number }}">next</a>
-                  {% endif %}
-                  </span>
-              </div>
+        <div class="pagination">
+          <span class="step-links">
+            {% if news.has_previous %}
+            <a href="?page={{ news.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="current">
+              Page {{ news.number }} of {{ news.paginator.num_pages }}
+            </span>
+            {% if news.has_next %}
+            <a href="?page={{ news.next_page_number }}">next</a>
+            {% endif %}
+          </span>
+        </div>
       </div><!-- col-sm-8 -->
       <!-- START OF SIDEBAR NEWSLETTER -->
       <div class="col-md-12 col-lg-4">
         <div class="mb-30 mt-md-30 p-30 card-view">
-          <h4 class="p-title"><b>Войти</b></h4>
-          <form action="" class="form-sm max-w-400x mlr-auto" method="post"> {% csrf_token %}
+          <h4 class="p-title"><b>Авторизоваться</b></h4>
+          <form action="" method="post"> {% csrf_token %}
             {{form.as_p}}
-              <h6><button class="mt-15 plr-20 btn-b-sm btn-fill-primary dplay-block" type="submit"
-                style="font-size: 1.1em;"><b>Войти</b></button></h6>
+            {% comment %}<div class='col-md-12 offset-md-0 btn-block'>{% endcomment %}
+              <div class=' btn-block '>
+                <br><input type="submit" value="Войти" class="btn-secondary active font-11">
+              </div>
           </form>
+          <a href="/registration" class="btn btn-secondary btn-md active mt-2 btn-block font-11 " role="button"
+            aria-pressed="true">Зарегистрироваться</a>
         </div><!-- card-view -->
         <div class="mb-30 mt-md-30 p-30 card-view">
           <h4 class="p-title"><b>Мы вконтакте</b></h4>

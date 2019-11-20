@@ -2,20 +2,23 @@
 {% block title %}Страница Входа{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row mx-auto">
-    <div class='col-md-6 offset-md-3 '>
-      <h1 class="" style="text-align: center;">Войти в систему</h1>
-      <form action="" method="post"> {% csrf_token %}
-        {{form.as_p}}
-        {% comment %}<div class='col-md-12 offset-md-0 btn-block'>{% endcomment %}
-        <div class=' btn-block '>
-          <br><input type="submit" value="Войти" class="btn-secondary active font-11">
+<section class="">
+  <div class="container">
+    <div class="row mx-auto">
+      <div class='col-md-6 offset-md-3 '>
+        <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
+          <h1 class="" style="text-align: center;">Войти в систему</h1>
+          <form action="" method="post"> {% csrf_token %}
+            {{form.as_p}}
+              <div class=' btn-block '>
+                <br><input type="submit" value="Войти" class="btn-secondary active font-11">
+              </div>
+          </form>
+          <a href="/registration" class="btn btn-secondary btn-md active mt-2 btn-block font-11 " role="button"
+            aria-pressed="true">Зарегистрироваться</a>
         </div>
-      </form>
-      <a href="/registration" class="btn btn-secondary btn-md active mt-2 btn-block font-11 " role="button"
-        aria-pressed="true">Зарегистрироваться</a>
+      </div>
     </div>
   </div>
-</div>
+</section>
 {% endblock %}
