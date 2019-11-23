@@ -8,23 +8,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
-        <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
-          <h4 class="p-title"><b>Главная новость</b></h4>
-          <img src="{% static 'images/news-1-700x400.jpg' %}" alt="">
-          <h3 class="mt-30"><a href="#">Пример текста</a></h3>
-          <ul class="mtb-10 list-li-mr-20 color-lite-black">
-            <li><i class="mr-5 font-12 ion-clock"></i>6 ноября 2019 г.</li>
-            <li><i class="mr-5 font-12 ion-android-person"></i>John Dowson</li>
-            <li><i class="mr-5 font-12 ion-ios-chatbubble-outline"></i>15</li>
-            <li><i class="mr-5 font-12 ion-eye"></i>105</li>
-          </ul>
-          <p>Пример описания ...</p>
-        </div><!-- bg-white -->
         {% if news %}
-        {% for news in news  %}
+        {% for news in reversed_news %}
+        {% if forloop.first %}
+        <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
+          <h4 class="p-title"><b>Последняя новость</b></h4>
+          <h4><a href="{% url 'news_page' pk=news.pk %}"
+                style="font-weight: 500; font-size: 1.15em; padding-bottom: 10px;">
+                {{ news.title|truncatechars:70 }}</a></h4>
+          <img src="/media/{{ news.image }}" alt="">
+          <div class="ptb-20 p-sm-20 pb-sm-0 plr-xs-0">
+              <p>{{ news.main_text|safe|truncatechars:90 }}</p>
+            </div>
+          <ul class="mtb-10 list-li-mr-20 color-lite-black">
+            <li><i class="mr-5 font-12 ion-clock"></i>{{ news.created }}</li>
+          </ul>
+        </div><!-- bg-white -->
+        {% else %}
         <div class="mb-30 sided-350x card-view">
           <div class="s-left">
-            {% comment %} need to refactor {% endcomment %}
             <img src="/media/{{ news.image }}" alt="">
           </div><!-- left-area -->
           <div class="s-right ptb-0 p-sm-20 pb-sm-0 plr-30 plr-xs-0">
@@ -32,29 +34,42 @@
                 style="font-weight: 500; font-size: 1.15em; padding-top: 15px; padding-bottom: 15px;">
                 {{ news.title|truncatechars:70 }}</a></h4>
             <div class="ptb-20 p-sm-20 pb-sm-0 plr-xs-0">
-              {% comment %} <p>{{ news.main_text|safe|truncatechars:90 }}</p> {% endcomment %}
             </div>
             <ul class="mtb-10 list-li-mr-20 color-lite-black">
               <li><i class="mr-5 font-12 ion-clock"></i>{{ news.created }}</li>
             </ul>
-
           </div><!-- right-area -->
         </div><!-- sided-350x -->
+        {% endif %}
         {% endfor %}
         {% endif %}
-        <div class="pagination">
-          <span class="step-links">
+        {% if news %}
+        <nav aria-label="...">
+          <ul class="pagination ">
             {% if news.has_previous %}
-            <a href="?page={{ news.previous_page_number }}">previous</a>
+            <li class="page-item ">
+              <a class="page-link" href="?page={{ news.previous_page_number }}">Предыдущая</a>
+            </li>
             {% endif %}
-            <span class="current">
-              Page {{ news.number }} of {{ news.paginator.num_pages }}
-            </span>
-            {% if news.has_next %}
-            <a href="?page={{ news.next_page_number }}">next</a>
+            {% for page in news.paginator.page_range %}
+            {% if page == news.number %}
+            <li class="page-item active">
+              <a class="page-link" href="#">{{ page }} <span class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
+            <li class="page-item ">
+              <a class="page-link" href="?page={{ page }}">{{ page }} <span class="sr-only">(current)</span></a>
+            </li>
             {% endif %}
-          </span>
-        </div>
+            {% endfor %}
+            <li class="page-item">
+              {% if news.has_next %}
+              <a class="page-link" href="?page={{ news.next_page_number }}">Следующая</a>
+              {% endif %}
+            </li>
+          </ul>
+        </nav>
+        {% endif %}
       </div><!-- col-sm-8 -->
       <!-- START OF SIDEBAR NEWSLETTER -->
       <div class="col-md-12 col-lg-4">
@@ -64,10 +79,10 @@
             {{form.as_p}}
             {% comment %}<div class='col-md-12 offset-md-0 btn-block'>{% endcomment %}
               <div class=' btn-block '>
-                <br><input type="submit" value="Войти" class="btn-secondary active font-11">
+                <br><input type="submit" value="Войти" class="btn-primary active font-11">
               </div>
           </form>
-          <a href="/registration" class="btn btn-secondary btn-md active mt-2 btn-block font-11 " role="button"
+          <a href="/registration" class="btn btn-primary btn-md active mt-2 btn-block font-11 " role="button"
             aria-pressed="true">Зарегистрироваться</a>
         </div><!-- card-view -->
         <div class="mb-30 mt-md-30 p-30 card-view">
