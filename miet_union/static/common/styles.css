@@ -579,7 +579,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 .btn-fill-primary{ text-align: center; height: 45px; line-height: 43px; border: 1px solid #0f45c7; background: #0f45c7; 
 	border-radius: 2px; color: #fff; }
 .btn-fill-primary:focus,
-.btn-fill-primary:hover{ background: none; }
+.btn-fill-primary:hover{ background: none; color: #0f45c7;}
 
 .btn-fill-red{ text-align: center; height: 45px; line-height: 43px; border: 1px solid #E3493D; background: #E3493D; 
 	border-radius: 3px; color: #fff; }
