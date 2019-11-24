@@ -16,15 +16,15 @@ def home(request):
     for i in reversed(news):
         reversed_news.append(i)
 
-    paginator = Paginator(news, 5)
+    paginator = Paginator(reversed_news, 5)
 
     page = request.GET.get('page')
     try:
-        news = paginator.page(page)
+        reversed_news = paginator.page(page)
     except PageNotAnInteger:
-        news = paginator.page(1)
+        reversed_news = paginator.page(1)
     except EmptyPage:
-        news = paginator.page(paginator.num_pages)
+        reversed_news = paginator.page(paginator.num_pages)
 
     context = {
         'news': news,
