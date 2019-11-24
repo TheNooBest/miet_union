@@ -26,7 +26,7 @@
       <div class="container">
         <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
         <ul class="main-menu" id="main-menu">
-          <li class="drop-down"><img src="{% static 'images/emblema_white.png'%}" style="width: 60px">
+          <li class="drop-down"><a href="{% url 'home' %}"><img src="{% static 'images/emblema_white.png'%}" style="width: 60px"></a>
           </li>
           <li class="drop-down" style="margin-left: 30px"><a href="{% url 'home' %}">Главная<i class=""></i></a>
           </li>
@@ -65,8 +65,8 @@
               {% else %}
               <a class="nav-link" href="{% url 'login'%}">Личный кабинет</a>
               {% endif %}
-              {% if user.is_superuser %}
-              <li><a href="admin">Консоль администратора</a></li>
+              {% if user.is_superuser or user.is_staff %}
+              <li><a href="/admin/">Консоль администратора</a></li>
               {% else %}
               {% endif %}
               <li>
@@ -82,12 +82,11 @@
       </div><!-- container -->
     </div><!-- bottom-menu -->
   </header>
-<div style="min-height: 522px">
+<div style="min-height: calc(522px);">
   {% block content%}
   {% endblock%}
 </div>
 
-  <div class="footer">
 	<footer class="bg-191 pos-relative color-white bg-primary pt-50 font-11">
 		<div class="container">
 			<div class="row">
