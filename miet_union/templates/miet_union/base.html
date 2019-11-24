@@ -65,8 +65,8 @@
               {% else %}
               <a class="nav-link" href="{% url 'login'%}">Личный кабинет</a>
               {% endif %}
-              {% if user.is_superuser %}
-              <li><a href="admin">Консоль администратора</a></li>
+              {% if user.is_superuser or user.is_staff %}
+              <li><a href="/admin/">Консоль администратора</a></li>
               {% else %}
               {% endif %}
               <li>
