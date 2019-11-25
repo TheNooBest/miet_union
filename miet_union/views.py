@@ -12,23 +12,18 @@ from ourteam.models import Worker
 
 def home(request):
     news = News.objects.all()
-    reversed_news = []
-    for i in reversed(news):
-        reversed_news.append(i)
-
-    paginator = Paginator(reversed_news, 5)
+    paginator = Paginator(news, 5)
 
     page = request.GET.get('page')
     try:
-        reversed_news = paginator.page(page)
+        news = paginator.page(page)
     except PageNotAnInteger:
-        reversed_news = paginator.page(1)
+        news = paginator.page(1)
     except EmptyPage:
-        reversed_news = paginator.page(paginator.num_pages)
+        news = paginator.page(paginator.num_pages)
 
     context = {
         'news': news,
-        'reversed_news': reversed_news,
         }
 
     form = UserLoginForm(request.POST or None)

@@ -25,11 +25,14 @@ class CustomDashboard(Dashboard):
 
 
 class NewsAdmin(SummernoteModelAdmin):
+    class Meta:
+        model = News
     summernote_fields = 'main_text'
     fields = ['title', 'main_text', 'image', 'created']
     list_display = ('title',
                     'created',)
     list_filter = ('created',)
+    list_per_page = 15
 
 
 class WorkerAdmin(admin.ModelAdmin):
