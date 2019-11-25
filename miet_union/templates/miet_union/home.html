@@ -8,9 +8,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
-        {% if reversed_news %}
-        {% for news in reversed_news %}
-        {% if forloop.first and not reversed_news.has_previous %}
+        {% if news %}
+        {% for news in news %}
+        {% if forloop.first and not news.has_previous %}
         <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
           <h4 class="p-title"><b>Последняя новость</b></h4>
           <h4><a href="{% url 'news_page' pk=news.pk %}"
@@ -43,17 +43,17 @@
         {% endif %}
         {% endfor %}
         {% endif %}
-        {% if reversed_news %}
+        {% if news %}
         <nav aria-label="...">
           <ul class="pagination mb-30">
-            {% if reversed_news.has_previous %}
+            {% if news.has_previous %}
             <li class="page-item ">
-              <a class="page-link" href="?page={{ reversed_news.previous_page_number }}"><i
+              <a class="page-link" href="?page={{ news.previous_page_number }}"><i
                   class="ion-chevron-left"></i></a>
             </li>
             {% endif %}
-            {% for page in reversed_news.paginator.page_range %}
-            {% if page == reversed_news.number %}
+            {% for page in news.paginator.page_range %}
+            {% if page == news.number %}
             <li class="page-item active">
               <a class="page-link">{{ page }} <span class="sr-only">(current)</span></a>
             </li>
@@ -64,7 +64,7 @@
             {% endif %}
             {% endfor %}
             <li class="page-item">
-              {% if reversed_news.has_next %}
+              {% if news.has_next %}
               <a class="page-link" href="?page={{ news.next_page_number }}"><i class="ion-chevron-right"></i></a>
               {% endif %}
             </li>
