@@ -25,13 +25,13 @@
           </ul>
         </div><!-- card-view -->
         {% else %}
-        <div class="mb-30 sided-350x card-view">
+        <div class="mb-30 sided-350x card-view" style="min-height: 200px">
           <div class="s-left">
             <img src="/media/{{ news.image }}" alt="">
           </div><!-- left-area -->
           <div class="s-right ptb-0 p-sm-20 pb-sm-0 plr-30 plr-xs-0">
             <h4><a href="{% url 'news_page' pk=news.pk %}"
-                style="font-weight: 500; font-size: 1.15em; padding-top: 15px; padding-bottom: 15px;">
+                style="font-weight: 500; font-size: 1.15em; padding-top: 15px; padding-bottom: 15px; min-height: 114px">
                 {{ news.title|truncatechars:70 }}</a></h4>
             <div class="ptb-20 p-sm-20 pb-sm-0 plr-xs-0">
             </div>
