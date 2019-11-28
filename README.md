@@ -1,6 +1,8 @@
-# miet_union
+# MIET union
 
-# Installation env
+## Description
+Web application of the union of the MIET Institute
+## Installation env
 
 ``` bash
 git clone https://github.com/IMB-a/miet_union
@@ -9,14 +11,14 @@ cd .venv/Scripts + activate # (for windows)
 cd .venv/Scripts + source activate # (for linux)
 cd ../..
 ```
-# Installation app
+## Installation app
 ``` bash
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-# Usage
+## Usage
 ``` bash
 python manage.py runserver
 ```
