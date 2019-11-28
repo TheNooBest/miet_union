@@ -1,29 +1,18 @@
 # miet_union
 
-# Installation
+# Installation env
 
 ``` bash
 git clone https://github.com/IMB-a/miet_union
-```
-``` bash
 python -m venv .venv
-```
-``` cmd
-cd .venv/Scripts + activate # (для windows)
-```
-``` bash
-cd .venv/Scripts + source activate # (для linux)
-```
-``` bash
+cd .venv/Scripts + activate # (for windows)
+cd .venv/Scripts + source activate # (for linux)
 cd ../..
 ```
+# Installation app
 ``` bash
 pip install -r requirements.txt
-```
-``` bash
 python manage.py makemigrations
-```
-``` bash
 python manage.py migrate
 ```
 
