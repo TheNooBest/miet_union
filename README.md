@@ -1,6 +1,6 @@
 # miet_union
 
-# установка проекта на локальную машину
+# Installation
 
 ``` bash
 git clone https://github.com/IMB-a/miet_union
@@ -27,7 +27,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-# запуск проекта
+# Usage
 ``` bash
 python manage.py runserver
 ```
