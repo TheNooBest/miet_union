@@ -1,14 +1,26 @@
-# miet_union
+# MIET union
 
-# установка проекта на локальную машину
-1) git clone https://github.com/IMB-a/miet_union
-2) python -m venv .venv
-3) cd .venv/Scripts + activate # (для windows)
-3) cd .venv/Scripts + source activate # (для linux)
-4) cd ../..
-5) pip install -r requirements.txt
-6) python manage.py makemigrations
-7) python manage.py migrate
+## Description
+Web application of the union of the MIET Institute
+## Installation env
 
-# запуск проекта
+``` bash
+git clone https://github.com/IMB-a/miet_union
+cd miet_union
+python -m venv .venv
+cd .venv/Scripts
+activate # (for windows)
+source activate # (for linux)
+cd ../..
+```
+## Installation app
+``` bash
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+```
+
+## Usage
+``` bash
 python manage.py runserver
+```
