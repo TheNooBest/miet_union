@@ -8,9 +8,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
-        {% if news %}
-        {% for news in news %}
-        {% if forloop.first and not news.has_previous %}
+        {% if all_news %}
+        {% for news in all_news %}
+        {% if forloop.first and not all_news.has_previous %}
         <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
           <h4 class="p-title"><b>Последняя новость</b></h4>
           <h4><a href="{% url 'news_page' pk=news.pk %}"
@@ -41,16 +41,16 @@
         {% endif %}
         {% endfor %}
         {% endif %}
-        {% if news %}
+        {% if all_news %}
         <nav aria-label="...">
           <ul class="pagination mb-30">
-            {% if news.has_previous %}
+            {% if all_news.has_previous %}
             <li class="page-item ">
-              <a class="page-link" href="?page={{ news.previous_page_number }}"><i class="ion-chevron-left"></i></a>
+              <a class="page-link" href="?page={{ all_news.previous_page_number }}"><i class="ion-chevron-left"></i></a>
             </li>
             {% endif %}
-            {% for page in news.paginator.page_range %}
-            {% if page == news.number %}
+            {% for page in all_news.paginator.page_range %}
+            {% if page == all_news.number %}
             <li class="page-item active">
               <a class="page-link">{{ page }} <span class="sr-only">(current)</span></a>
             </li>
@@ -61,8 +61,8 @@
             {% endif %}
             {% endfor %}
             <li class="page-item">
-              {% if news.has_next %}
-              <a class="page-link" href="?page={{ news.next_page_number }}"><i class="ion-chevron-right"></i></a>
+              {% if all_news.has_next %}
+              <a class="page-link" href="?page={{ all_news.next_page_number }}"><i class="ion-chevron-right"></i></a>
               {% endif %}
             </li>
           </ul>

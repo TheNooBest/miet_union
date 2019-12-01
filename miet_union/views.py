@@ -11,19 +11,19 @@ from ourteam.models import Worker
 
 
 def home(request):
-    news = News.objects.all()
-    paginator = Paginator(news, 5)
+    all_news = News.objects.all()
+    paginator = Paginator(all_news, 5)
 
     page = request.GET.get('page')
     try:
-        news = paginator.page(page)
+        all_news = paginator.page(page)
     except PageNotAnInteger:
-        news = paginator.page(1)
+        all_news = paginator.page(1)
     except EmptyPage:
-        news = paginator.page(paginator.num_pages)
+        all_news = paginator.page(paginator.num_pages)
 
     context = {
-        'news': news,
+        'all_news': all_news,
         }
 
     form = UserLoginForm(request.POST or None)
