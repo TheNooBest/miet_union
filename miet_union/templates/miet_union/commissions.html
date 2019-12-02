@@ -15,42 +15,13 @@
 							</h1>
 						</p>
 					</div>
+          {% for commissions_of_profcom_docunet in commissions_of_profcom_docunets %}
           <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_kom_kontrol_org_pitanya.pdf">Положение о комиссии
-               по контролю за организацией питания</a>
-						</h5>
-					</p>
-          <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_kom_kultur_fiz.pdf">Положение о комиссии
-               по культурно-массовой и физкультурно-оздоровительной работе</a>
-						</h5>
-					</p>
-          <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_kom_social_veterany.pdf">Положение о комиссии
-               по социальной работе и по работе с ветеранами</a>
-						</h5>
-					</p>
-          <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_kom_oxrana_tryda.pdf">Положение о комиссии
-               по охране труда</a>
-						</h5>
-					</p>
-          <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_revizion_kom_profsouz.pdf">Положение о ревизионной комиссии
-               первичной профсоюзной организации МИЭТа</a>
-						</h5>
-					</p>
-          <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_kom_soblud_interes.pdf">Положение о комиссии по соблюдению финансовых,
-               социально-экономических и трудовых интересов членов профсоюза</a>
-						</h5>
-					</p>
+            <h5 style="color: blue;">
+              <a href="media/{{ commissions_of_profcom_docunet.file }}">{{ commissions_of_profcom_docunet.title }}</a>
+            </h5>
+          </p>
+          {% endfor %}
 				</div>
 			</div><!-- col-sm-8 -->
 		</div><!-- row -->
