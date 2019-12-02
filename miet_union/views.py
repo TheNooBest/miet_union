@@ -47,10 +47,10 @@ def our_team(request):
     context = {
         'worker': worker,
         }
-    return render(request, 'miet_union/ourteam.html', context)
+    return render(request, 'miet_union/our_team.html', context)
 
 
-def registration_view(request):
+def registration(request):
     form = UserCreationForm(data=request.POST or None)
     next_ = request.GET.get('next')
     if request.method == 'POST' and form.is_valid():
@@ -59,7 +59,7 @@ def registration_view(request):
         form.save()
         return redirect('/login')
 
-    return render(request, "miet_union/registration.html", { 'form': form})
+    return render(request, "miet_union/registration.html", {'form': form})
 
 
 def login_view(request):
@@ -79,7 +79,7 @@ def login_view(request):
 
 @login_required
 def my_account(request):
-    return render(request, 'miet_union/myaccount.html')
+    return render(request, 'miet_union/my_account.html')
 
 
 def logout_view(request):
@@ -117,7 +117,7 @@ def money_help_for_graduate_students(request):
 
 
 def money_help_for_workers(request):
-    return render(request, 'miet_union/money_help_for_workers.html')    
+    return render(request, 'miet_union/money_help_for_workers.html')
 
 
 def test(request):
@@ -125,19 +125,19 @@ def test(request):
 
 
 def social_card(request):
-    return render(request, 'miet_union/socialcard.html')
+    return render(request, 'miet_union/social_card.html')
 
 
-def help_proforg(request):
-    return render(request, 'miet_union/helpproforg.html')
+def help_prof_org(request):
+    return render(request, 'miet_union/help_prof_org.html')
 
 
-def profcom(request):
-    return render(request, 'miet_union/profcom.html')
+def prof_com(request):
+    return render(request, 'miet_union/prof_com.html')
 
 
-def profsouz(request):
-    return render(request, 'miet_union/profsouz.html')
+def prof_souz(request):
+    return render(request, 'miet_union/prof_souz.html')
 
 
 def test_404(request):
@@ -148,13 +148,13 @@ def commissions(request):
     return render(request, 'miet_union/commissions.html')
 
 
-def normative_document(request):
-    return render(request, 'miet_union/normativedocument.html')
+def normative_documents(request):
+    return render(request, 'miet_union/normative_documents.html')
 
 
 def personal_data_protection(request):
-    return render(request, 'miet_union/personaldataprotection.html')
+    return render(request, 'miet_union/personal_data_protection.html')
 
 
 def useful_links(request):
-    return render(request, 'miet_union/usefullinks.html')
+    return render(request, 'miet_union/useful_links.html')
