@@ -23,7 +23,7 @@ from .views import (
     useful_links,
     registration_view,
     money_help_for_students,
-    money_help_for_aspirants,
+    money_help_for_graduate_students,
     money_help_for_workers,
 )
 
@@ -38,7 +38,7 @@ urlpatterns = [
     path('login', login_view, name='login'),
     path('logout', logout_view, name='logout'),
     path('money_help_for_students', money_help_for_students, name='money_help_for_students'),
-    path('money_help_for_aspirants', money_help_for_aspirants, name='money_help_for_aspirants'),
+    path('money_help_for_graduate_students', money_help_for_graduate_students, name='money_help_for_graduate_students'),
     path('money_help_for_workers', money_help_for_workers, name='money_help_for_workers'),
     path('my_account', my_account, name='my_account'),
     path('news/<int:pk>', news_page, name='news_page'),

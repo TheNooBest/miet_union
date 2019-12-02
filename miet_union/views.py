@@ -112,8 +112,8 @@ def money_help_for_students(request):
     return render(request, 'miet_union/money_help_for_students.html')
 
 
-def money_help_for_aspirants(request):
-    return render(request, 'miet_union/money_help_for_aspirants.html')
+def money_help_for_graduate_students(request):
+    return render(request, 'miet_union/money_help_for_graduate_students.html')
 
 
 def money_help_for_workers(request):
