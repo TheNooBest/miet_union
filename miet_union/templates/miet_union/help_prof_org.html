@@ -88,40 +88,13 @@
               </al>
             </h5>
           </p>
+          {% for the_main_activities_of_prof_org_document in the_main_activities_of_prof_org_documents %}
           <p class="mtb-25">
             <h5 style="color: blue;">
-              <a href="https://miet.ru/upload/content/PROFKOM/Zayvlenye_vstuplenye_student.doc">Заявление о вступлении в
-                профсоюз</a>
+              <a href="media/{{ the_main_activities_of_prof_org_document.file }}">{{ the_main_activities_of_prof_org_document.title }}</a>
             </h5>
           </p>
-          <p class="mtb-25">
-            <h5 style="color: blue;">
-              <a href="https://miet.ru/upload/content/PROFKOM/Protokol_vybor_proforga.doc">Протокол профсоюзного
-                собрания об
-                избрании
-                профорга</a>
-            </h5>
-          </p>
-          <p class="mtb-25">
-            <h5 style="color: blue;">
-              <a href="https://miet.ru/upload/content/PROFKOM/Socialnya_karta_gruppy.doc">Социальная карта группы</a>
-            </h5>
-          </p>
-          <p class="mtb-25">
-            <h5 style="color: blue;">
-              <a href="https://miet.ru/upload/content/PROFKOM/Pamyatka_oformlenye_bank_karty.doc">Памятка по оформлению
-                банковский карт
-                для
-                получения стипендии</a>
-            </h5>
-          </p>
-          <p class="mtb-25">
-            <h5 style="color: blue;">
-              <a href="https://miet.ru/upload/content/PROFKOM/Hodatistvo_matpom.doc">Ходатайство об оказании
-                материальной
-                помощий</a>
-            </h5>
-          </p>
+          {% endfor %}
         </div>
       </div><!-- col-sm-8 -->
       <div class="col-md-12 col-lg-4">
