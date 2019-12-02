@@ -139,13 +139,13 @@ def social_card(request):
 
 
 def help_prof_org(request):
-    help_prof_org_docunets = HelpForProforg.objects.all()
-    help_student_prof_org_docunets = HelpForStudentProforg.objects.all()
-    the_main_activities_of_prof_org = TheMainActivitiesOfProforg.objects.all()
+    help_prof_org_documents = HelpForProforg.objects.all()
+    help_student_prof_org_documents = HelpForStudentProforg.objects.all()
+    the_main_activities_of_prof_org_documents = TheMainActivitiesOfProforg.objects.all()
     context = {
-        'help_prof_org_docunets': help_prof_org_docunets,
-        'help_student_prof_org_docunets': help_student_prof_org_docunets,
-        'the_main_activities_of_prof_org': the_main_activities_of_prof_org,
+        'help_prof_org_documents': help_prof_org_documents,
+        'help_student_prof_org_documents': help_student_prof_org_documents,
+        'the_main_activities_of_prof_org_documents': the_main_activities_of_prof_org_documents,  # noqa
     }
     return render(request, 'miet_union/help_prof_org.html', context)
 
