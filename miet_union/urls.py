@@ -11,7 +11,6 @@ from .views import (
     home,
     login_view,
     logout_view,
-    money_help,
     my_account,
     news_page,
     normative_document,
@@ -23,6 +22,9 @@ from .views import (
     test_404,
     useful_links,
     registration_view,
+    money_help_for_students,
+    money_help_for_graduate_students,
+    money_help_for_workers,
 )
 
 urlpatterns = [
@@ -35,7 +37,9 @@ urlpatterns = [
     path('helpproforg', help_proforg, name='helpproforg'),
     path('login', login_view, name='login'),
     path('logout', logout_view, name='logout'),
-    path('moneyhelp', money_help, name='moneyhelp'),
+    path('money_help_for_students', money_help_for_students, name='money_help_for_students'),
+    path('money_help_for_graduate_students', money_help_for_graduate_students, name='money_help_for_graduate_students'),
+    path('money_help_for_workers', money_help_for_workers, name='money_help_for_workers'),
     path('my_account', my_account, name='my_account'),
     path('news/<int:pk>', news_page, name='news_page'),
     path('normativedocument', normative_document, name='normativedocument'),

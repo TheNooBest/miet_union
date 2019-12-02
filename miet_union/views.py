@@ -108,8 +108,16 @@ def error_500(request):
     return render(request, 'miet_union/500.html')
 
 
-def money_help(request):
-    return render(request, 'miet_union/moneyhelp.html')
+def money_help_for_students(request):
+    return render(request, 'miet_union/money_help_for_students.html')
+
+
+def money_help_for_graduate_students(request):
+    return render(request, 'miet_union/money_help_for_graduate_students.html')
+
+
+def money_help_for_workers(request):
+    return render(request, 'miet_union/money_help_for_workers.html')    
 
 
 def test(request):
