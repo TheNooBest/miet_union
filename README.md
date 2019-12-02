@@ -13,6 +13,7 @@ activate # (for windows)
 source activate # (for linux)
 cd ../..
 ```
+
 ## Installation app
 ``` bash
 pip install -r requirements.txt
