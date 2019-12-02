@@ -14,18 +14,13 @@
 							</h1>
 						</p>
 					</div>
-					<p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Pol_zacita_person_dan.pdf"> Положение «О защите персональных данных»
-               первичной профсоюзной организации сотрудников и студентов МИЭТа</a>
-						</h5>
-					</p>
+					{% for protection_of_personal_information_document in protection_of_personal_information_documents %}
           <p class="mtb-25">
-						<h5 style="color: blue;">
-							<a href="https://miet.ru/upload/content/PROFKOM/Soglasye_obrabotku_PD.docx"> Согласие на обработку
-               персональных данных члена Профсоюза</a>
-						</h5>
-					</p>
+            <h5 style="color: blue;">
+              <a href="media/{{ protection_of_personal_information_document.file }}">{{ protection_of_personal_information_document.title }}</a>
+            </h5>
+          </p>
+          {% endfor %}
 				</div>
 			</div><!-- col-sm-8 -->
 		</div><!-- row -->
