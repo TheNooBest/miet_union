@@ -57,7 +57,7 @@ class ProtectionOfPersonalInformation(models.Model):
         ordering = ['title']
 
 
-class LegislativeRegulatoryAndStatutoryDocuments(models.Model):
+class NormativeDocuments(models.Model):
     title = models.CharField(max_length=250, verbose_name='Название')
     file = models.FileField(
         upload_to="documents/", verbose_name='Файл')

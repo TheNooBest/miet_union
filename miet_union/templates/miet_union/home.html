@@ -8,19 +8,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-lg-8">
-        {% if news %}
-        {% for news in news %}
-        {% if forloop.first and not news.has_previous %}
+        {% if all_news %}
+        {% for news in all_news %}
+        {% if forloop.first and not all_news.has_previous %}
         <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
           <h4 class="p-title"><b>Последняя новость</b></h4>
           <h4><a href="{% url 'news_page' pk=news.pk %}"
               style="font-weight: 500; font-size: 1.15em; padding-bottom: 10px;">
               {{ news.title|truncatechars:100 }}</a></h4>
           <img src="/media/{{ news.image }}" alt="">
-          <div class="ptb-20 p-sm-20 pb-sm-0 plr-xs-0">
-            <p>{{ news.main_text|safe|truncatechars:70 }}</p>
-          </div>
-          <ul class="mtb-10 list-li-mr-20 color-lite-black">
+          <ul class="mtb-10 list-li-mr-20 color-lite-black" style="float: right;">
             <li><i class="mr-5 font-12 ion-clock"></i>{{ news.created }}</li>
           </ul>
         </div><!-- card-view -->
@@ -41,16 +38,16 @@
         {% endif %}
         {% endfor %}
         {% endif %}
-        {% if news %}
+        {% if all_count and all_news.count >= 5 %}
         <nav aria-label="...">
           <ul class="pagination mb-30">
-            {% if news.has_previous %}
+            {% if all_news.has_previous %}
             <li class="page-item ">
-              <a class="page-link" href="?page={{ news.previous_page_number }}"><i class="ion-chevron-left"></i></a>
+              <a class="page-link" href="?page={{ all_news.previous_page_number }}"><i class="ion-chevron-left"></i></a>
             </li>
             {% endif %}
-            {% for page in news.paginator.page_range %}
-            {% if page == news.number %}
+            {% for page in all_news.paginator.page_range %}
+            {% if page == all_news.number %}
             <li class="page-item active">
               <a class="page-link">{{ page }} <span class="sr-only">(current)</span></a>
             </li>
@@ -61,8 +58,8 @@
             {% endif %}
             {% endfor %}
             <li class="page-item">
-              {% if news.has_next %}
-              <a class="page-link" href="?page={{ news.next_page_number }}"><i class="ion-chevron-right"></i></a>
+              {% if all_news.has_next %}
+              <a class="page-link" href="?page={{ all_news.next_page_number }}"><i class="ion-chevron-right"></i></a>
               {% endif %}
             </li>
           </ul>
@@ -85,6 +82,15 @@
               }, 20030105);
             </script>
           </ul>
+        </div><!-- card-view -->
+        <div class="mb-30 mt-md-30 p-30 card-view">
+          <h4 class="p-title"><b>Поиск по новостям</b></h4>
+          <p class="text-center" style="margin-bottom: 20px;">Найти новость</p>
+          <form class="form-sm max-w-400x mlr-auto">
+            <input type="email" placeholder="Введите название новости">
+            <h6><button class="mt-15 plr-20 btn-b-sm btn-fill-primary dplay-block" type="submit"
+                style="font-size: 1.1em;"><b>Найти</b></button></h6>
+          </form>
         </div><!-- card-view -->
         <div class="mb-30 mt-md-30 p-30 card-view">
           <h4 class="p-title"><b>Уведомления</b></h4>
@@ -111,6 +117,7 @@
             <li class="mb-0"><a href="https://miet.ru/structure/s/1905/e/50497/355"><i class="ion-ios-world"
                   style="font-size: 1.7em;"></i>https://miet.ru/profcom</a></li>
             </li>
+          </ul>
         </div><!-- card-view -->
         <!-- END OF SIDEBAR NEWSLETTER -->
       </div><!-- col-sm-4 -->

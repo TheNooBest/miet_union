@@ -1,4 +1,4 @@
-from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
+from django.conf.urls import handler400, handler403, handler404, handler500  # noqa
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -7,22 +7,24 @@ from django.views.generic import RedirectView
 
 from .views import (
     commissions,
-    help_proforg,
+    help_prof_org,
     home,
     login_view,
     logout_view,
-    money_help,
+    money_help_for_graduate_students,
+    money_help_for_students,
+    money_help_for_workers,
     my_account,
     news_page,
-    normative_document,
+    normative_documents,
     our_team,
     personal_data_protection,
-    profcom,
-    profsouz,
+    prof_com,
+    prof_souz,
+    registration,
     social_card,
     test_404,
     useful_links,
-    registration_view,
 )
 
 urlpatterns = [
@@ -32,23 +34,29 @@ urlpatterns = [
     path('commissions', commissions, name='commissions'),
     path('favicon.ico', RedirectView.as_view(
         url='/static/images/favicon.ico')),
-    path('helpproforg', help_proforg, name='helpproforg'),
+    path('help_prof_org', help_prof_org, name='help_prof_org'),
     path('login', login_view, name='login'),
     path('logout', logout_view, name='logout'),
-    path('moneyhelp', money_help, name='moneyhelp'),
+    path('money_help_for_graduate_students', money_help_for_graduate_students,
+         name='money_help_for_graduate_students'),
+    path('money_help_for_students', money_help_for_students,
+         name='money_help_for_students'),
+    path('money_help_for_workers', money_help_for_workers,
+         name='money_help_for_workers'),
     path('my_account', my_account, name='my_account'),
     path('news/<int:pk>', news_page, name='news_page'),
-    path('normativedocument', normative_document, name='normativedocument'),
-    path('ourteam', our_team, name='ourteam'),
-    path('personaldataprotection', personal_data_protection,
-         name='personaldataprotection'),
-    path('profcom', profcom, name='profcom'),
-    path('profsouz', profsouz, name='profsouz'),
-    path('socialcard', social_card, name='socialcard'),
+    path('normative_documents', normative_documents,
+         name='normative_documents'),
+    path('our_team', our_team, name='our_team'),
+    path('personal_data_protection', personal_data_protection,
+         name='personal_data_protection'),
+    path('prof_com', prof_com, name='prof_com'),
+    path('prof_souz', prof_souz, name='prof_souz'),
+    path('registration', registration, name='registration'),
+    path('social_card', social_card, name='social_card'),
     path('summernote/', include('django_summernote.urls')),
     path('test', test_404, name='test'),
-    path('usefullinks', useful_links, name='usefullinks'),
-    path('registration', registration_view, name='registration'),
+    path('useful_links', useful_links, name='useful_links'),
 ]
 
 if settings.DEBUG:

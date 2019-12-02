@@ -44,7 +44,7 @@ class CustomIndexDashBoard(Dashboard):
                 modules.ModelList(
                     title=('Документы'),
                     models=('documents.models.ProtectionOfPersonalInformation',
-                            'documents.models.LegislativeRegulatoryAndStatutoryDocuments',
+                            'documents.models.NormativeDocuments',
                             'documents.models.CommissionsOfProfcom',
                             'documents.models.UsefulLinks',),
                 ),

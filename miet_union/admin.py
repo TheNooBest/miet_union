@@ -4,12 +4,12 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 from documents.models import (
+    CommissionsOfProfcom,
     HelpForProforg,
     HelpForStudentProforg,
-    TheMainActivitiesOfProforg,
+    NormativeDocuments,
     ProtectionOfPersonalInformation,
-    LegislativeRegulatoryAndStatutoryDocuments,
-    CommissionsOfProfcom,
+    TheMainActivitiesOfProforg,
     UsefulLinks,
 )
 from news.models import News
@@ -77,9 +77,9 @@ class ProtectionOfPersonalInformationAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-class LegislativeRegulatoryAndStatutoryDocumentsAdmin(admin.ModelAdmin):
+class NormativeDocumentsAdmin(admin.ModelAdmin):
     class Meta:
-        model = LegislativeRegulatoryAndStatutoryDocuments
+        model = NormativeDocuments
     fields = ['title', 'file']
     list_display = ('title',)
 
@@ -98,7 +98,6 @@ class UsefulLinksAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
 
-
 admin.site.index_title = ('Профком')
 admin.site.site_title = ('Административная консоль')
 
@@ -106,7 +105,7 @@ admin.site.site_title = ('Административная консоль')
 admin.site.register(CommissionsOfProfcom, CommissionsOfProfcomAdmin)
 admin.site.register(HelpForProforg, HelpForProforgAdmin)
 admin.site.register(HelpForStudentProforg, HelpForStudentProforgAdmin)
-admin.site.register(LegislativeRegulatoryAndStatutoryDocuments, LegislativeRegulatoryAndStatutoryDocumentsAdmin)
+admin.site.register(NormativeDocuments, NormativeDocumentsAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(ProtectionOfPersonalInformation, ProtectionOfPersonalInformationAdmin)
 admin.site.register(TheMainActivitiesOfProforg, TheMainActivitiesOfProforgAdmin)

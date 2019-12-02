@@ -3,7 +3,6 @@
 {% load miet_union_extras %}
 {% load django_bootstrap_breadcrumbs %}
 <html lang="en">
-
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,9 +16,8 @@
   <link href="{% static 'common/styles.css' %}" rel="stylesheet">
   <link href="{% static 'fonts/ionicons.css' %}" rel="stylesheet">
   {% endblock %}
-  <title>{% block title%}Ednews{% endblock%}</title>
+  <title>{% block title%}Новостной портал профкома института МИЭТ{% endblock%}</title>
 </head>
-
 <body>
   <header>
     <div class="bottom-menu">
@@ -32,28 +30,34 @@
           </li>
           <li class="drop-down"><a>Студенту<i class="ion-chevron-down"></i></a>
             <ul class="drop-down-menu drop-down-inner">
-              <li><a href="{% url 'moneyhelp' %}">Мат. помощь</a></li>
-              <li><a href="{% url 'socialcard' %}">Соц. карта</a></li>
-              <li><a href="{% url 'helpproforg' %}">В помощь профоргу</a></li>
+              <li><a href="{% url 'social_card' %}">Соц. карта</a></li>
+              <li><a href="{% url 'help_prof_org' %}">В помощь профоргу</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a>Мат. Помощь<i class="ion-chevron-down"></i></a>
+            <ul class="drop-down-menu drop-down-inner">
+              <li><a href="{% url 'money_help_for_students' %}">Студенту</a></li>
+              <li><a href="{% url 'money_help_for_graduate_students' %}">Аспиранту</a></li>
+              <li><a href="{% url 'money_help_for_workers' %}">Сотруднику</a></li>
             </ul>
           </li>
           <li class="drop-down"><a>Документы<i class="ion-chevron-down"></i></a>
             <ul class="drop-down-menu drop-down-inner">
-              <li><a href="{% url 'personaldataprotection' %}">Защита персональных данных</a></li>
-              <li><a href="{% url 'normativedocument' %}">Нормативные документы</a></li>
+              <li><a href="{% url 'personal_data_protection' %}">Защита персональных данных</a></li>
+              <li><a href="{% url 'normative_documents' %}">Нормативные документы</a></li>
               <li><a href="{% url 'commissions' %}">Комиссии профкома</a></li>
-              <li><a href="{% url 'usefullinks' %}">Полезные ссылки</a></li>
+              <li><a href="{% url 'useful_links' %}">Полезные ссылки</a></li>
             </ul>
           </li>
           <li class="drop-down"><a>О нас<i class="ion-chevron-down"></i></a>
             <ul class="drop-down-menu drop-down-inner">
-              <li><a href="{% url 'profcom' %}">О профкоме</a></li>
-              <li><a href="{% url 'profsouz' %}">О профсоюзе</a></li>
-              <li><a href="{% url 'ourteam' %}">Сотрудники</a></li>
+              <li><a href="{% url 'prof_com' %}">О профкоме</a></li>
+              <li><a href="{% url 'prof_souz' %}">О профсоюзе</a></li>
+              <li><a href="{% url 'our_team' %}">Сотрудники</a></li>
             </ul>
           </li>
           {% if user.is_authenticated %}
-          <li class="drop-down" style="float: right;"><a>{{ user.first_name }} ({{user.email}}) <i
+          <li class="drop-down" style="float: right;"><a>{{ user.first_name }}<i
                 class="ion-chevron-down"></i></a>
             {% else %}
           <li class="drop-down" style="float: right;"><a>Гость<i class="ion-chevron-down"></i></a>
@@ -86,33 +90,39 @@
   {% block content%}
   {% endblock%}
 </div>
-
 	<footer class="bg-191 pos-relative color-white bg-primary pt-50 font-11">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-8 col-sm-8">	
+				<div class="col-lg-2 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>Студенту</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="{% url 'moneyhelp' %}">Мат. помощь</a></li>
-						<li><a href="{% url 'socialcard' %}">Соц. карта</a></li>
-						<li><a href="{% url 'helpproforg' %}">В помощь профоргу</a></li>
+						<li><a href="{% url 'social_card' %}">Соц. карта</a></li>
+						<li><a href="{% url 'help_prof_org' %}">В помощь профоргу</a></li>
 					</ul>
-				</div><!-- col-sm-4 -->			
-				<div class="col-lg-4 col-md-8 col-sm-8">	
+				</div><!-- col-sm-4 -->
+        <div class="col-lg-2 col-md-8 col-sm-8">	
+					<h5 class="f-title"><b>Мат. Помощь</b></h5>
+					<ul class="mb-30 list-hover list-block list-a-ptb-5">
+						<li><a href="{% url 'money_help_for_students' %}">Студенту</a></li>
+            <li><a href="{% url 'money_help_for_graduate_students' %}">Аспиранту</a></li>
+            <li><a href="{% url 'money_help_for_workers' %}">Сотруднику</a></li>
+					</ul>
+				</div><!-- col-sm-4 -->				
+				<div class="col-lg-3 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>Документы</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="{% url 'personaldataprotection' %}">Защита персональных данных</a></li>
-						<li><a href="{% url 'normativedocument' %}">Нормативные документы</a></li>
+						<li><a href="{% url 'personal_data_protection' %}">Защита персональных данных</a></li>
+						<li><a href="{% url 'normative_documents' %}">Нормативные документы</a></li>
 						<li><a href="{% url 'commissions' %}">Комиссии профкома</a></li>
-						<li><a href="{% url 'usefullinks' %}">Полезные ссылки</a></li>
+						<li><a href="{% url 'useful_links' %}">Полезные ссылки</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->				
 				<div class="col-lg-2 col-md-8 col-sm-8">	
 					<h5 class="f-title"><b>О нас</b></h5>
 					<ul class="mb-30 list-hover list-block list-a-ptb-5">
-						<li><a href="{% url 'profcom' %}">О профкоме</a></li>
-						<li><a href="{% url 'profsouz' %}">О профсоюзе</a></li>
-						<li><a href="{% url 'ourteam' %}">Сотрудники</a></li>
+						<li><a href="{% url 'prof_com' %}">О профкоме</a></li>
+						<li><a href="{% url 'prof_souz' %}">О профсоюзе</a></li>
+						<li><a href="{% url 'our_team' %}">Сотрудники</a></li>
 					</ul>
 				</div><!-- col-sm-4 -->
         <div class="col-lg-3 col-md-8 col-sm-8">	
@@ -148,5 +158,4 @@
   <script src="{% static 'plugin-frameworks/bootstrap.js' %}"></script>
   <script src="{% static 'common/scripts.js' %}"></script>
 </body>
-
 </html>

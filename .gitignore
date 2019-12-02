@@ -136,10 +136,12 @@ dmypy.json
 fixtures/
 
 # Django migrations
-news/migrations/*_initial.py
+documents/migrations/*_initial.py
+documents/migrations/*_auto*.py
 news/migrations/*_auto*.py
-ourteam/migrations/*_initial.py
+news/migrations/*_initial.py
 ourteam/migrations/*_auto*.py
+ourteam/migrations/*_initial.py
 
 # Django MEDIA_ROOT
 /media/

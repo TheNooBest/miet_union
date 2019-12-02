@@ -1,30 +1,40 @@
+from django.conf.urls import handler400, handler403, handler404, handler500  # noqa
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
-from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.forms import UserCreationForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import UserLoginForm
+
+from documents.models import (
+    CommissionsOfProfcom,
+    HelpForProforg,
+    HelpForStudentProforg,
+    NormativeDocuments,
+    ProtectionOfPersonalInformation,
+    TheMainActivitiesOfProforg,
+    UsefulLinks,
+)
 from news.models import News
 from ourteam.models import Worker
 
 
 def home(request):
-    news = News.objects.all()
-    paginator = Paginator(news, 5)
+    all_news = News.objects.all()
+    paginator = Paginator(all_news, 5)
 
     page = request.GET.get('page')
     try:
-        news = paginator.page(page)
+        all_news = paginator.page(page)
     except PageNotAnInteger:
-        news = paginator.page(1)
+        all_news = paginator.page(1)
     except EmptyPage:
-        news = paginator.page(paginator.num_pages)
+        all_news = paginator.page(paginator.num_pages)
 
     context = {
-        'news': news,
-        }
+        'all_news': all_news,
+    }
 
     form = UserLoginForm(request.POST or None)
     next_ = request.GET.get('next')
@@ -46,11 +56,11 @@ def our_team(request):
     worker = Worker.objects.all()
     context = {
         'worker': worker,
-        }
-    return render(request, 'miet_union/ourteam.html', context)
+    }
+    return render(request, 'miet_union/our_team.html', context)
 
 
-def registration_view(request):
+def registration(request):
     form = UserCreationForm(data=request.POST or None)
     next_ = request.GET.get('next')
     if request.method == 'POST' and form.is_valid():
@@ -59,7 +69,7 @@ def registration_view(request):
         form.save()
         return redirect('/login')
 
-    return render(request, "miet_union/registration.html", { 'form': form})
+    return render(request, "miet_union/registration.html", {'form': form})
 
 
 def login_view(request):
@@ -79,7 +89,7 @@ def login_view(request):
 
 @login_required
 def my_account(request):
-    return render(request, 'miet_union/myaccount.html')
+    return render(request, 'miet_union/my_account.html')
 
 
 def logout_view(request):
@@ -108,8 +118,16 @@ def error_500(request):
     return render(request, 'miet_union/500.html')
 
 
-def money_help(request):
-    return render(request, 'miet_union/moneyhelp.html')
+def money_help_for_students(request):
+    return render(request, 'miet_union/money_help_for_students.html')
+
+
+def money_help_for_graduate_students(request):
+    return render(request, 'miet_union/money_help_for_graduate_students.html')
+
+
+def money_help_for_workers(request):
+    return render(request, 'miet_union/money_help_for_workers.html')
 
 
 def test(request):
@@ -117,19 +135,27 @@ def test(request):
 
 
 def social_card(request):
-    return render(request, 'miet_union/socialcard.html')
+    return render(request, 'miet_union/social_card.html')
 
 
-def help_proforg(request):
-    return render(request, 'miet_union/helpproforg.html')
+def help_prof_org(request):
+    help_prof_org_documents = HelpForProforg.objects.all()
+    help_student_prof_org_documents = HelpForStudentProforg.objects.all()
+    the_main_activities_of_prof_org_documents = TheMainActivitiesOfProforg.objects.all()
+    context = {
+        'help_prof_org_documents': help_prof_org_documents,
+        'help_student_prof_org_documents': help_student_prof_org_documents,
+        'the_main_activities_of_prof_org_documents': the_main_activities_of_prof_org_documents,  # noqa
+    }
+    return render(request, 'miet_union/help_prof_org.html', context)
 
 
-def profcom(request):
-    return render(request, 'miet_union/profcom.html')
+def prof_com(request):
+    return render(request, 'miet_union/prof_com.html')
 
 
-def profsouz(request):
-    return render(request, 'miet_union/profsouz.html')
+def prof_souz(request):
+    return render(request, 'miet_union/prof_souz.html')
 
 
 def test_404(request):
@@ -137,16 +163,32 @@ def test_404(request):
 
 
 def commissions(request):
-    return render(request, 'miet_union/commissions.html')
+    commissions_of_profcom_docunets = CommissionsOfProfcom.objects.all()
+    context = {
+        'commissions_of_profcom_docunets': commissions_of_profcom_docunets,
+    }
+    return render(request, 'miet_union/commissions.html', context)
 
 
-def normative_document(request):
-    return render(request, 'miet_union/normativedocument.html')
+def normative_documents(request):
+    normative_documents = NormativeDocuments.objects.all()
+    context = {
+        'normative_documents': normative_documents,
+    }
+    return render(request, 'miet_union/normative_documents.html', context)
 
 
 def personal_data_protection(request):
-    return render(request, 'miet_union/personaldataprotection.html')
+    protection_of_personal_information_documents = ProtectionOfPersonalInformation.objects.all()    # noqa
+    context = {
+        'protection_of_personal_information_documents': protection_of_personal_information_documents,   # noqa
+    }
+    return render(request, 'miet_union/personal_data_protection.html', context)
 
 
 def useful_links(request):
-    return render(request, 'miet_union/usefullinks.html')
+    useful_links_documents = UsefulLinks.objects.all()
+    context = {
+        'useful_links_documents': useful_links_documents,
+    }
+    return render(request, 'miet_union/useful_links.html', context)
