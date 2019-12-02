@@ -1,11 +1,21 @@
+from django.conf.urls import handler400, handler403, handler404, handler500  # noqa
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
-from django.conf.urls import handler400, handler403, handler404, handler500 # noqa
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.forms import UserCreationForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import UserLoginForm
+
+from documents.models import (
+    CommissionsOfProfcom,
+    HelpForProforg,
+    HelpForStudentProforg,
+    NormativeDocuments,
+    ProtectionOfPersonalInformation,
+    TheMainActivitiesOfProforg,
+    UsefulLinks,
+)
 from news.models import News
 from ourteam.models import Worker
 
@@ -24,7 +34,7 @@ def home(request):
 
     context = {
         'all_news': all_news,
-        }
+    }
 
     form = UserLoginForm(request.POST or None)
     next_ = request.GET.get('next')
@@ -46,7 +56,7 @@ def our_team(request):
     worker = Worker.objects.all()
     context = {
         'worker': worker,
-        }
+    }
     return render(request, 'miet_union/our_team.html', context)
 
 
@@ -129,7 +139,15 @@ def social_card(request):
 
 
 def help_prof_org(request):
-    return render(request, 'miet_union/help_prof_org.html')
+    help_prof_org_docunets = HelpForProforg.objects.all()
+    help_student_prof_org_docunets = HelpForStudentProforg.objects.all()
+    the_main_activities_of_prof_org = TheMainActivitiesOfProforg.objects.all()
+    context = {
+        'help_prof_org_docunets': help_prof_org_docunets,
+        'help_student_prof_org_docunets': help_student_prof_org_docunets,
+        'the_main_activities_of_prof_org': the_main_activities_of_prof_org,
+    }
+    return render(request, 'miet_union/help_prof_org.html', context)
 
 
 def prof_com(request):
@@ -145,16 +163,32 @@ def test_404(request):
 
 
 def commissions(request):
-    return render(request, 'miet_union/commissions.html')
+    commissions_of_profcom_docunets = CommissionsOfProfcom.objects.all()
+    context = {
+        'commissions_of_profcom_docunets': commissions_of_profcom_docunets,
+    }
+    return render(request, 'miet_union/commissions.html', context)
 
 
 def normative_documents(request):
-    return render(request, 'miet_union/normative_documents.html')
+    normative_documents = NormativeDocuments.objects.all()
+    context = {
+        'normative_documents': normative_documents,
+    }
+    return render(request, 'miet_union/normative_documents.html', context)
 
 
 def personal_data_protection(request):
-    return render(request, 'miet_union/personal_data_protection.html')
+    protection_of_personal_information_documents = ProtectionOfPersonalInformation.objects.all()    # noqa
+    context = {
+        'protection_of_personal_information_documents': protection_of_personal_information_documents,   # noqa
+    }
+    return render(request, 'miet_union/personal_data_protection.html', context)
 
 
 def useful_links(request):
-    return render(request, 'miet_union/useful_links.html')
+    useful_links_documents = UsefulLinks.objects.all()
+    context = {
+        'useful_links_documents': useful_links_documents,
+    }
+    return render(request, 'miet_union/useful_links.html', context)
