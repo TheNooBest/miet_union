@@ -6,6 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import UserLoginForm
+from .forms import StudentMoneyForm
 
 from documents.models import (
     CommissionsOfProfcom,
@@ -18,6 +19,8 @@ from documents.models import (
 )
 from news.models import News
 from ourteam.models import Worker
+
+from pdf.pdfed import pdf_money
 
 
 def home(request):
@@ -119,7 +122,22 @@ def error_500(request):
 
 
 def money_help_for_students(request):
-    return render(request, 'miet_union/money_help_for_students.html')
+    form = StudentMoneyForm(request.POST or None)
+    if form.is_valid():
+        fio = request.POST.get('ФИО')
+        group = request.POST.get('group')
+        addr = request.POST.get('addr')
+        reason = request.POST.get('reason')
+        daymonth = request.POST.get('daymonth')
+        year = request.POST.get('year')
+        ser = request.POST.get('ser')
+        num = request.POST.get('num')
+        pas_date = request.POST.get('pas_date')
+        pas_place = request.POST.get('pas_place')
+        phone = request.POST.get('phone')
+
+        pdf_money(fio, group, addr, reason, daymonth, year, ser, num, pas_date, pas_place, phone)
+    return render(request, 'miet_union/money_help_for_students.html', {"form": form})
 
 
 def money_help_for_graduate_students(request):
