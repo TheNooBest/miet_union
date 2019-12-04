@@ -158,3 +158,5 @@ vscode/
 .vscode/
 /.vscode/
 
+pdf/sourses/*
+# Dynamic PDF
