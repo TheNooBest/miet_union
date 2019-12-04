@@ -1,8 +1,7 @@
 {% extends "miet_union/base.html" %}
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
-{% block title %} Комиссии профкома {% endblock %}
-
+{% block title %} Защита персональных данных {% endblock %}
 {% block content %}
 <section class="">
 	<div class="container">
@@ -11,14 +10,14 @@
 				<div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
 					<div class="col-md-12 col-lg-12">
 						<p class="mtb-1">
-							<h1 style="text-align:center; color: black;"> Комиссии профкома
+							<h1 style="text-align:center; color: black;"> Защита персональных данных
 							</h1>
 						</p>
 					</div>
-          {% for commissions_of_profcom_docunet in commissions_of_profcom_docunets %}
+					{% for protection_of_personal_information_document in protection_of_personal_information_documents %}
           <p class="mtb-25">
             <h5 style="color: blue;">
-              <a href="media/{{ commissions_of_profcom_docunet.file }}">{{ commissions_of_profcom_docunet.title }}</a>
+              <a href="media/{{ protection_of_personal_information_document.file }}">{{ protection_of_personal_information_document.title }}</a>
             </h5>
           </p>
           {% endfor %}

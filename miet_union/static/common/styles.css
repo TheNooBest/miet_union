@@ -579,7 +579,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 .btn-fill-primary{ text-align: center; height: 45px; line-height: 43px; border: 1px solid #0f45c7; background: #0f45c7; 
 	border-radius: 2px; color: #fff; }
 .btn-fill-primary:focus,
-.btn-fill-primary:hover{ background: none; }
+.btn-fill-primary:hover{ background: none; color: #0f45c7;}
 
 .btn-fill-red{ text-align: center; height: 45px; line-height: 43px; border: 1px solid #E3493D; background: #E3493D; 
 	border-radius: 3px; color: #fff; }
@@ -766,7 +766,7 @@ form textarea{ min-height: 120px; max-height: 120px; padding: 10px 15px; }
 
 /* PAGINATION */
 
-.pagination > li > a{ height: 40px; width: 40px; line-height: 38px; text-align: center; background: #E1E1E1; 
+.pagination > li > a{ min-height: 40px; min-width: 40px; text-align: center; background: #E1E1E1;
 	border: 1px solid #E1E1E1; margin-right: 10px; border-radius: 3px; font-size: 1.2em; }
 
 .pagination > li.active > a,

@@ -2,6 +2,7 @@
 {% block title %}Страница Входа{% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="container">
 
 	<div class="row mx-auto">
@@ -18,4 +19,24 @@
 </div>
 {% comment %} TODO refactor {% endcomment %}
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+=======
+<section class="">
+  <div class="container">
+    <div class="row mx-auto">
+      <div class='col-md-6 offset-md-3 '>
+        <div class="mb-30 p-30 ptb-sm-25 plr-sm-15 card-view">
+          <h1 class="" style="text-align: center;">Войти в систему</h1>
+          <form action="" method="post"> {% csrf_token %}
+            {{form.as_p}}
+              <div class=' btn-block '>
+                <br><input type="submit" value="Войти" class="btn-fill-primary active font-11">
+              </div>
+          </form>
+          <button onclick="location.href = '/registration';" class="btn-fill-primary btn-block active font-11" style="margin-top: 7px">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+>>>>>>> dev
 {% endblock %}

@@ -12,7 +12,7 @@ class News(models.Model):
     main_text = models.TextField(verbose_name='Текст новости')
     image = models.FileField(
         upload_to="news/images", verbose_name='Изображение')
-    created = models.DateField(
+    created = models.DateTimeField(
         default=timezone.now, verbose_name='Дата создания')
 
     def __str__(self):
