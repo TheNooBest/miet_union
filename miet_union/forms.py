@@ -26,39 +26,39 @@ class UserLoginForm(forms.Form):
 class StudentMoneyForm(forms.Form):
     ФИО = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    group = forms.CharField(
+    Группа = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    addr = forms.CharField(
+    Адрес_проживания = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    reason = forms.CharField(
+    Причина = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    daymonth = forms.CharField(
+    Дата = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
     year = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    ser = forms.CharField(
+    Серия_Паспорта = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    num = forms.CharField(
+    Номер_Паспорта = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    pas_date = forms.CharField(
+    Дата_Выдачи = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    pas_place = forms.CharField(
+    Место_Выдачи = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
-    phone = forms.CharField(
+    Телефон = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     def clean(self, *args, **kwargs):
         ФИО = self.cleaned_data.get('ФИО')
-        group = self.cleaned_data.get('group')
-        addr = self.cleaned_data.get('addr')
-        reason = self.cleaned_data.get('reason')
-        daymonth = self.cleaned_data.get('daymonth')
-        year = self.cleaned_data.get('year')
-        ser = self.cleaned_data.get('ser')
-        num = self.cleaned_data.get('num')
-        pas_date = self.cleaned_data.get('pas_date')
-        pas_place = self.cleaned_data.get('pas_place')
-        phone = self.cleaned_data.get('phone')
+        Группа = self.cleaned_data.get('Группа')
+        Адрес_проживания = self.cleaned_data.get('Адрес_проживания')
+        Причина = self.cleaned_data.get('Причина')
+        Дата = self.cleaned_data.get('Дата')
+        Год = self.cleaned_data.get('Год')
+        Серия_Паспорта = self.cleaned_data.get('Серия_Паспорта')
+        Номер_Паспорта = self.cleaned_data.get('Номер_Паспорта')
+        Дата_Выдачи = self.cleaned_data.get('Дата_Выдачи')
+        Место_Выдачи = self.cleaned_data.get('Место_Выдачи')
+        Телефон = self.cleaned_data.get('Телефон')
 
         # if username and password:
         #     user = authenticate(username=username, password=password)
