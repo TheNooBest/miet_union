@@ -44,7 +44,7 @@ def pdf_money(fio, group, addr, reason, daymonth, year, ser, num, pas_date, pas_
     page.mergePage(new_pdf.getPage(0))
     output.addPage(page)
     mills = str(int(round(time.time() * 1000)))
-    outputStream = open("pdf/"+ mills + ".pdf", "wb")
+    outputStream = open("pdf/sourses/" + mills + ".pdf", "wb")
     output.write(outputStream)
     outputStream.close()
     return "pdf/" + mills + ".pdf"
